@@ -43,7 +43,7 @@
 
   <!-- ***** Header Area Start ***** -->
 
-  <div w3-include-html="./components/header.html"></div>
+  <?php include('./components/header.php');?>
 
   <!-- ***** Header Area End ***** -->
 
@@ -126,13 +126,7 @@
     </div>
   </div>  
 
-  <!-- <footer>
-    <div class="container">
-      <div class="col-lg-12">
-        <p>Copyright © 2048 LUGX Gaming Company. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
-      </div>
-    </div>
-  </footer> -->
+  <?php include('./components/footer.php');?>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
@@ -143,13 +137,6 @@
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
 
-        <!-- Placeholder for the footer -->
-        <div w3-include-html="./components/footer.html"></div>
-  
-        <!-- Call the function to include the header and footer -->
-        <script>
-            includeHeader();
-        </script>
 
   </body>
 </html>

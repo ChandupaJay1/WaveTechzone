@@ -39,7 +39,7 @@
 
   <!-- ***** Header Area Start ***** -->
 
-  <div w3-include-html="./components/header.html"></div>
+  <?php include('./components/header.php');?>
 
   <!-- ***** Header Area End ***** -->
 
@@ -242,6 +242,8 @@
     </div>
   </div>
 
+  <?php include('./components/footer.php');?>
+
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
@@ -251,14 +253,6 @@
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
-
-          <!-- Placeholder for the footer -->
-          <div w3-include-html="./components/footer.html"></div>
-  
-          <!-- Call the function to include the header and footer -->
-          <script>
-              includeHeader();
-          </script>
 
   </body>
 </html>

@@ -1,0 +1,19 @@
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Services</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+    </div>
+    <p>Copyright © 2048 Wave TechZone Company. All rights reserved.</p>
+    <p><a rel="nofollow" href="#" target="_blank">Design By Chandupa Jayalath (NerdTech)</a></p>
+  </div>
+</footer>
+
+

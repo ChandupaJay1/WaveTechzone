@@ -12,11 +12,11 @@
 
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="shop.html">Our Shop</a></li>
-              <li><a href="product-details.html">Product Details</a></li>
-              <li><a href="games.html">Game list</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="index.php" class="active">Home</a></li>
+              <li><a href="shop.php">Our Shop</a></li>
+              <li><a href="product-details.php">Product Details</a></li>
+              <li><a href="games.php">Games</a></li>
+              <li><a href="contact.php">Contact Us</a></li>
               <!-- <li><a href="#">Sign In</a></li> -->
             </ul>
             <a class='menu-trigger'>
