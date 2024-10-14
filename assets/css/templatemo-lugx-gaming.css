@@ -1,10 +1,19 @@
-/*
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
 
-TemplateMo 589 lugx gaming
+html::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+}
 
-https://templatemo.com/tm-589-lugx-gaming
-
-*/
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px #70431e89;
+  background-color: #fe7300;
+}
 
 /* ---------------------------------------------
 Table of contents
@@ -219,7 +228,7 @@ body {
 }
 
 .section-heading h6 {
-  color: #ee626b;
+  color: #fe7300;
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 700;
@@ -227,7 +236,7 @@ body {
 
 .main-button a {
   display: inline-block;
-  background-color: #ee626b;
+  background-color: #fe7300;
   text-transform: uppercase;
   color: #fff;
   font-size: 14px;
@@ -240,7 +249,7 @@ body {
 }
 
 .main-button a:hover {
-  background-color: #0071f8;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -317,7 +326,7 @@ Pre-loader Style
   height: 16px;
   top: 12px;
   left: 15px;
-  background:#fe7300;
+  background: #fe7300;
   border-radius: 50%;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -340,7 +349,7 @@ Pre-loader Style
   width: 16px;
   height: 16px;
   margin-left: 16px;
-  background:#fe7300;
+  background: #fe7300;
   border-radius: 50%;
 }
 
@@ -353,7 +362,7 @@ Header Style
 */
 
 .background-header {
-  background-color:#ff7300 !important;
+  background-color: #ff7300 !important;
   border-radius: 0px 0px 25px 25px;
   height: 80px !important;
   position: fixed !important;
@@ -834,7 +843,7 @@ Banner Style
   margin-left: auto;
   margin-right: auto;
   /* width: 50%; */
-  
+
 }
 
 .main-banner .right-image img {
@@ -903,13 +912,13 @@ Services Style
   display: inline-block;
   text-align: center;
   line-height: 90px;
-  background-color: #0071f8;
+  background-color: #000000;
   border-radius: 50%;
   transition: all .3s;
 }
 
 .features .item:hover .image {
-  background-color: #ee626b;
+  background-color: #fe7300;
 }
 
 
@@ -1818,7 +1827,8 @@ body {
 
 .sheet-header {
   padding: 15px;
-  background-color: #fe7300; /* Modern green color */
+  background-color: #fe7300;
+  /* Modern green color */
   color: #fff;
   text-align: center;
   font-size: 1.5em;
@@ -1840,9 +1850,11 @@ body {
 }
 
 footer {
-  background-color: #212121; /* Dark background for a modern feel */
+  background-color: #212121;
+  /* Dark background for a modern feel */
   padding: 40px 0;
-  color: #f4f4f4; /* Light text for contrast */
+  color: #f4f4f4;
+  /* Light text for contrast */
 }
 
 footer .container {
@@ -1859,7 +1871,8 @@ footer p {
 }
 
 footer p a {
-  color: #ffffff; /* Stylish green for links */
+  color: #ffffff;
+  /* Stylish green for links */
   text-decoration: none;
   font-weight: bold;
 }
@@ -1896,7 +1909,15 @@ footer p a:hover {
 }
 
 .social-icons a:hover {
-  color: #f9f9f9; /* Social icon hover effect */
+  color: #f9f9f9;
+  /* Social icon hover effect */
+}
+
+.ft-logo {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
 }
 
 @media (max-width: 768px) {
@@ -1904,3 +1925,4 @@ footer p a:hover {
     font-size: 1.2em;
   }
 }
+

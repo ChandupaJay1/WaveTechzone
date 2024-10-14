@@ -1,3 +1,5 @@
+
+
 <footer>
   <div class="container">
     <div class="footer-links">
@@ -11,8 +13,13 @@
       <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
       <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
     </div>
-    <p>Copyright © 2048 Wave TechZone Company. All rights reserved.</p>
-    <p><a rel="nofollow" href="#" target="_blank">Design By Chandupa Jayalath (NerdTech)</a></p>
+    <p>Copyright © 2048 <?php echo $_ENV['APP_NAME']; ?>. All rights reserved.</p>
+    <p>
+        <a rel="nofollow" href="#" target="_blank">
+            Design By Chandupa Jayalath (NerdTech) 
+            <img src="./assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
+        </a>
+    </p>
   </div>
 </footer>
 

@@ -1,3 +1,11 @@
+<?php
+require 'vendor/autoload.php';
+
+// Load the .env file
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +63,7 @@
       <div class="row">
         <div class="col-lg-6 align-self-center">
           <div class="caption header-text">
-            <h6>Welcome to Wave TechZone</h6>
+          <h6>Welcome to <?php echo $_ENV['APP_NAME']; ?> </h6>
             <h2>Best Online Services & Store.</h2>
             <p>
               Explore the best online services and unique products tailored for you. Enjoy quality, value, and
@@ -340,10 +348,12 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="section-heading">
-                  <h6>Our Shop</h6>
-                  <h2>Go Pre-Order Buy & Get Best <em>Prices</em> For You!</h2>
+                  <h6>Service Hours</h6>
+                  <h2>We Are <em>24h</em> Available For You!</h2>
                 </div>
-                <p>Lorem ipsum dolor consectetur adipiscing, sed do eiusmod tempor incididunt.</p>
+                <p>🔴 Island wide Service. </br> 
+                   🔴 Island wide Service.
+              </p>
                 <div class="main-button">
                   <a href="shop.html">Shop Now</a>
                 </div>
