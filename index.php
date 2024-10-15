@@ -18,9 +18,11 @@ $dotenv->load();
 
   <title>Wave TechZone</title>
 
+  <!-- header logo -->
+  <link rel="icon" href="assets/images/logo-tp-orange.ico">
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
 
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -28,10 +30,10 @@ $dotenv->load();
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-  <!--
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
--->
 </head>
 
 <body>
@@ -63,17 +65,18 @@ $dotenv->load();
       <div class="row">
         <div class="col-lg-6 align-self-center">
           <div class="caption header-text">
-            <h6>Welcome to <?php echo $_ENV['APP_ICON']; ?> </h6>
+            <h6>Welcome to <?php echo $_ENV['APP_NAME']; ?> </h6>
             <h2>Best Online Services & Store.</h2>
             <p>
               Explore the best online services and unique products tailored for you. Enjoy quality, value, and
               exceptional customer support in every purchase. Elevate your shopping experience today!</p>
           </div>
         </div>
+
         <!-- Add Logo here -->
         <div class="col-lg-4 offset-lg-2">
           <div class="right-image">
-            <img src="<?php echo $_ENV['APP_ICON']; ?>" alt="">
+            <img src="<?php echo $_ENV['APP_LOGO']; ?>" alt="">
           </div>
         </div>
       </div>
@@ -87,9 +90,9 @@ $dotenv->load();
           <a href="#">
             <div class="item">
               <div class="image">
-                <img src="assets/images/featured-01.png" alt="" style="max-width: 44px;">
+                <img src="assets/images/services.png" alt="" style="max-width: 44px;">
               </div>
-              <h4>Free Storage</h4>
+              <h4>Desktop/Servers Repairing</h4>
             </div>
           </a>
         </div>
@@ -97,9 +100,9 @@ $dotenv->load();
           <a href="#">
             <div class="item">
               <div class="image">
-                <img src="assets/images/featured-02.png" alt="" style="max-width: 44px;">
+                <img src="assets/images/services2.png"" alt="" style="max-width: 44px;">
               </div>
-              <h4>User More</h4>
+              <h4>LCD/LED TV Monitor Repairing</h4>
             </div>
           </a>
         </div>
@@ -107,9 +110,9 @@ $dotenv->load();
           <a href="#">
             <div class="item">
               <div class="image">
-                <img src="assets/images/featured-03.png" alt="" style="max-width: 44px;">
+                <img src="assets/images/services3.png" alt="" style="max-width: 44px;">
               </div>
-              <h4>Reply Ready</h4>
+              <h4>Photocopy,Duplo & Scanner Repairing</h4>
             </div>
           </a>
         </div>
@@ -117,9 +120,9 @@ $dotenv->load();
           <a href="#">
             <div class="item">
               <div class="image">
-                <img src="assets/images/featured-04.png" alt="" style="max-width: 44px;">
+                <img src="assets/images/services4.png" alt="" style="max-width: 44px;">
               </div>
-              <h4>Easy Layout</h4>
+              <h4>Network/CCTV/Security Systems</h4>
             </div>
           </a>
         </div>
@@ -195,6 +198,49 @@ $dotenv->load();
         </div>
       </div>
     </div>
+  </div>
+
+  <div id="customCarousel" class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- Auto-slide interval set to 3 seconds -->
+    <!-- Carousel indicators (optional) -->
+    <ol class="carousel-indicators">
+      <li data-target="#customCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#customCarousel" data-slide-to="1"></li>
+      <li data-target="#customCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Carousel slides -->
+    <div class="carousel-inner">
+      <!-- First Slide with Lazy-Loading -->
+      <div class="carousel-item active">
+        <img data-src="assets/images/Cover 1.png" class="d-block w-100 lazyload" alt="Slide 1 Image">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+
+      <!-- Second Slide with Lazy-Loading -->
+      <div class="carousel-item">
+        <img data-src="assets/images/Cover 2.png" class="d-block w-100 lazyload" alt="Slide 2 Image">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+
+      <!-- Third Slide with Lazy-Loading -->
+      <div class="carousel-item">
+        <img data-src="assets/images/Cover 6.png" class="d-block w-100 lazyload" alt="Slide 3 Image">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel controls -->
+    <a class="carousel-control-prev" href="#customCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#customCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 
   <div class="section most-played">
@@ -351,11 +397,10 @@ $dotenv->load();
                   <h6>Service Hours</h6>
                   <h2>We Are <em>24h</em> Available For You!</h2>
                 </div>
-                <p>🔴 Island wide Service. </br>
-                  🔴 Island wide Service.
+                <p>🔴24hrs Technical Support. <br>🔴Island wide door step service for&emsp;<br>local Government and private sectors.
                 </p>
                 <div class="main-button">
-                  <a href="shop.html">Shop Now</a>
+                  <!-- <a href="shop.html">Shop Now</a> -->
                 </div>
               </div>
             </div>
@@ -369,12 +414,11 @@ $dotenv->load();
                   <h6>Contact US</h6>
                   <h2>Contact Us <em>Now!</em> Hurry Up!</h2>
                   <p>
-                    </br>
-                    <img src="./assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo"> +94 715 221 982
-                    </br>
-                    <img src="./assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo"> +94 715 221 982
+                    <br>
+                    <a href="+94712095954"><i class="fas fa-phone-alt"></i>&emsp;+94 71 2095 954</a>
+                    <br><br>
+                    <a href="#"><i class="fas fa-envelope"></i>&emsp;email@example.com</a>
                   </p>
-
                 </div>
               </div>
             </div>
@@ -395,6 +439,12 @@ $dotenv->load();
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+  <!-- Bootstrap and jQuery JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+  <!-- LazyLoad Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 
 </body>
 

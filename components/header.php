@@ -14,7 +14,7 @@
             <ul class="nav">
               <li><a href="/wavetechzone/" class="active">Home</a></li>
               <li><a href="/wavetechzone/shop">Shop</a></li>
-              <li><a href="/wavetechzone/product-details">Product Details</a></li>
+              <!-- <li><a href="/wavetechzone/product-details">Product Details</a></li> -->
               <li><a href="/wavetechzone/games">Games</a></li>
               <li><a href="/wavetechzone/contact">Contact Us</a></li>
               <!-- <li><a href="#">Sign In</a></li> -->

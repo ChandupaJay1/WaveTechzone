@@ -13,7 +13,8 @@ switch ($path) {
         require 'contact.php';
         break;
     case '/shop':
-        require 'shop.php';
+        // require 'shop.php';
+        require 'shopcons.php';
         break;
     case '/games':
         require 'games.php';

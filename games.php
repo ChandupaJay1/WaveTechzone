@@ -19,6 +19,9 @@ $dotenv->load();
 
     <title>Games</title>
 
+    <!-- header logo -->
+    <link rel="icon" href="assets/images/logo-tp-orange.ico">
+
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -56,7 +59,7 @@ https://templatemo.com/tm-589-lugx-gaming
 
     <!-- ***** Header Area Start ***** -->
 
-    <?php include('./components/header.php');?>
+    <?php include('./components/header.php'); ?>
 
     <!-- ***** Header Area End ***** -->
 
@@ -85,7 +88,7 @@ https://templatemo.com/tm-589-lugx-gaming
     </div>
 
 
-    <?php include('./components/footer.php');?>
+    <?php include('./components/footer.php'); ?>
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
