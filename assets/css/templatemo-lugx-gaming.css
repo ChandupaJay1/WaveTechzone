@@ -839,18 +839,22 @@ Banner Style
 
 .main-banner .right-image {
   position: relative;
-  /* display: block; */
+  /* display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 50%; */
+  width: 50%; */
 
 }
 
 .main-banner .right-image img {
   border-radius: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
 }
 
-.main-banner .right-image span.price {
+/* .main-banner .right-image span.price {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -861,7 +865,7 @@ Banner Style
   font-weight: 700;
   color: #fff;
   padding: 4px 15px;
-}
+} */
 
 .main-banner .right-image span.offer {
   position: absolute;

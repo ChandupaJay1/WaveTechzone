@@ -53,7 +53,7 @@ $dotenv->load();
 
   <!-- ***** Header Area Start ***** -->
 
-  <?php include('./components/header.php');?>
+  <?php include('./components/header.php'); ?>
 
 
   <!-- ***** Header Area End ***** -->
@@ -63,7 +63,7 @@ $dotenv->load();
       <div class="row">
         <div class="col-lg-6 align-self-center">
           <div class="caption header-text">
-          <h6>Welcome to <?php echo $_ENV['APP_NAME']; ?> </h6>
+            <h6>Welcome to <?php echo $_ENV['APP_ICON']; ?> </h6>
             <h2>Best Online Services & Store.</h2>
             <p>
               Explore the best online services and unique products tailored for you. Enjoy quality, value, and
@@ -73,7 +73,7 @@ $dotenv->load();
         <!-- Add Logo here -->
         <div class="col-lg-4 offset-lg-2">
           <div class="right-image">
-            <img src="assets/images/temp_logo.jpg" alt="">
+            <img src="<?php echo $_ENV['APP_ICON']; ?>" alt="">
           </div>
         </div>
       </div>
@@ -351,9 +351,9 @@ $dotenv->load();
                   <h6>Service Hours</h6>
                   <h2>We Are <em>24h</em> Available For You!</h2>
                 </div>
-                <p>🔴 Island wide Service. </br> 
-                   🔴 Island wide Service.
-              </p>
+                <p>🔴 Island wide Service. </br>
+                  🔴 Island wide Service.
+                </p>
                 <div class="main-button">
                   <a href="shop.html">Shop Now</a>
                 </div>
@@ -366,15 +366,15 @@ $dotenv->load();
             <div class="row">
               <div class="col-lg-12">
                 <div class="section-heading">
-                  <h6>NEWSLETTER</h6>
-                  <h2>Get Up To $100 Off Just Buy <em>Subscribe</em> Newsletter!</h2>
-                </div>
-                <div class="search-input">
-                  <form id="subscribe" action="#">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                      placeholder="Your email...">
-                    <button type="submit">Subscribe Now</button>
-                  </form>
+                  <h6>Contact US</h6>
+                  <h2>Contact Us <em>Now!</em> Hurry Up!</h2>
+                  <p>
+                    </br>
+                    <img src="./assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo"> +94 715 221 982
+                    </br>
+                    <img src="./assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo"> +94 715 221 982
+                  </p>
+
                 </div>
               </div>
             </div>
@@ -384,7 +384,7 @@ $dotenv->load();
     </div>
   </div>
 
-  <?php include('./components/footer.php');?>
+  <?php include('./components/footer.php'); ?>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->

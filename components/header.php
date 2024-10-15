@@ -1,5 +1,3 @@
-
-
 <header class="header-area header-sticky">
     <div class="container">
       <div class="row">
@@ -8,17 +6,17 @@
 
             <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
-              <img src="assets/images/logo.png" alt="" style="width: 158px;">
+              <img src="assets/images/logo-tp.png" alt="" style="width: 50px;">
             </a>
             <!-- ***** Logo End ***** -->
 
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.php" class="active">Home</a></li>
-              <li><a href="shop.php">Our Shop</a></li>
-              <li><a href="product-details.php">Product Details</a></li>
-              <li><a href="games.php">Games</a></li>
-              <li><a href="contact.php">Contact Us</a></li>
+              <li><a href="/wavetechzone/" class="active">Home</a></li>
+              <li><a href="/wavetechzone/shop">Shop</a></li>
+              <li><a href="/wavetechzone/product-details">Product Details</a></li>
+              <li><a href="/wavetechzone/games">Games</a></li>
+              <li><a href="/wavetechzone/contact">Contact Us</a></li>
               <!-- <li><a href="#">Sign In</a></li> -->
             </ul>
             <a class='menu-trigger'>
