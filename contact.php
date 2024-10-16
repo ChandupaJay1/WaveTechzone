@@ -1,17 +1,15 @@
 <?php
-require 'vendor/autoload.php';
+require 'vendor/autoload.php'; // Load Composer dependencies
 
 // Load the .env file
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -24,17 +22,12 @@ $dotenv->load();
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-  <!--
-
-
--->
 </head>
 
 <body>
@@ -50,13 +43,10 @@ $dotenv->load();
       </div>
     </div>
   </div>
-
   <!-- ***** Preloader End ***** -->
 
   <!-- ***** Header Area Start ***** -->
-
   <?php include('./components/header.php'); ?>
-
   <!-- ***** Header Area End ***** -->
 
   <div class="page-heading header-text">
@@ -83,7 +73,7 @@ $dotenv->load();
             <ul>
               <li><span>Address:</span>
                 <a href="https://www.google.com/maps?q=Sunny+Isles+Beach,+FL+33160,+United+States" target="_blank">
-                Stage II, New Town, Anuradhapura Town, Sri Lanka
+                  Stage II, New Town, Anuradhapura Town, Sri Lanka
                 </a>
               </li>
               <li><span>Phone:</span>
@@ -93,7 +83,6 @@ $dotenv->load();
                 <a href="mailto:wavetechzone@gmail.com">wavetechzone@gmail.com</a>
               </li>
             </ul>
-
           </div>
         </div>
         <div class="col-lg-6">
@@ -101,30 +90,32 @@ $dotenv->load();
             <div class="row">
               <div class="col-lg-12">
                 <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.804698421347!2d80.41825684170861!3d8.309222034076203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcf5160d51f77d%3A0x6bbab350b4841d51!2sWAVE%20TECHZONE!5e0!3m2!1sen!2slk!4v1729062126474!5m2!1sen!2slk" width="100%" height="325px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.804698421347!2d80.41825684170861!3d8.309222034076203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcf5160d51f77d%3A0x6bbab350b4841d51!2sWAVE%20TECHZONE!5e0!3m2!1sen!2slk!4v1729062126474!5m2!1sen!2slk" width="100%" height="325px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
                 </div>
               </div>
+
               <div class="col-lg-12">
-                <form id="contact-form" action="" method="post">
+                <!-- Contact form start -->
+                <form id="contact-form" action="contact-process.php" method="post">
                   <div class="row">
                     <div class="col-lg-6">
                       <fieldset>
-                        <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                        <input type="text" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
                       </fieldset>
                     </div>
                     <div class="col-lg-6">
                       <fieldset>
-                        <input type="surname" name="surname" id="surname" placeholder="Your Surname..." autocomplete="on" required>
+                        <input type="text" name="surname" id="surname" placeholder="Your Surname..." autocomplete="on" required>
                       </fieldset>
                     </div>
                     <div class="col-lg-6">
                       <fieldset>
-                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                        <input type="email" name="email" id="email" placeholder="Your E-mail..." required>
                       </fieldset>
                     </div>
                     <div class="col-lg-6">
                       <fieldset>
-                        <input type="subject" name="subject" id="subject" placeholder="Subject..." autocomplete="on">
+                        <input type="text" name="subject" id="subject" placeholder="Subject..." autocomplete="on">
                       </fieldset>
                     </div>
                     <div class="col-lg-12">
@@ -139,6 +130,22 @@ $dotenv->load();
                     </div>
                   </div>
                 </form>
+
+                <br>
+
+                <!-- Display success/error messages -->
+                <?php
+                if (isset($_GET['status'])) {
+                  if ($_GET['status'] == 'success') {
+                    echo "<p class='success-message'>🎉 Your message has been successfully sent! Thank you for reaching out to us.</p>";
+                  } elseif ($_GET['status'] == 'error') {
+                    echo "<p class='error-message'>⚠️ Oops! There was a problem sending your message. Please try again later.</p>";
+                  } elseif ($_GET['status'] == 'validation_error' && isset($_GET['message'])) {
+                    echo "<p class='error-message'>❌ " . htmlspecialchars($_GET['message']) . "</p>";
+                  }
+                }
+                ?>
+
               </div>
             </div>
           </div>
@@ -150,15 +157,9 @@ $dotenv->load();
   <?php include('./components/footer.php'); ?>
 
   <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
-
-
 </body>
 
 </html>

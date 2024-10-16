@@ -1989,54 +1989,76 @@ footer p a:hover {
 } */
 
 .construction-container {
-  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   text-align: center;
   padding: 20px;
+  background-color: #f9f9f9; /* Optional background color */
+  min-height: 100vh; /* Full height */
 }
 
+/* Responsive image styling */
 .construction-container img {
-  /* width: 250px; */
-  width: 1400px;
-  height: 700px;
-  margin-bottom: 20px;
-  border-radius: 10px; /* For rounded corners */
+  max-width: auto; /* Makes the image responsive */
+  height: 50%; /* Maintains the aspect ratio */
+  border-radius: 30px;
 }
 
- h1 {
-  font-size: 48px;
-  color: #222;
-} *
-
-p {
-  font-size: 18px;
-  color: #555;
-} */
-
-.countdown {
-  font-size: 24px;
-  color: #ff5500;
-  margin-top: 10px;
+/* Headline styling */
+.construction-container h1 {
+  font-size: 2.5rem; /* Responsive font size */
+  color: #333; /* Dark color for the text */
+  margin: 10px 0; /* Space around the heading */
 }
 
-.notify-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s;
+/* Paragraph styling */
+.construction-container p {
+  font-size: 1.2rem; /* Responsive font size */
+  color: #555; /* Slightly lighter text color */
+  margin: 10px 0; /* Space around paragraphs */
 }
 
-.notify-btn:hover {
-  background-color: #0056b3;
+/* Countdown styling */
+.construction-container .countdown {
+  font-weight: bold; /* Make it stand out */
+  font-size: 1.5rem; /* Responsive font size */
+}
+
+/* Button styling */
+.construction-container .notify-btn {
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 1rem; /* Responsive font size */
+  color: white; /* Text color */
+  background-color: #007bff; /* Button color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth color change */
+}
+
+.construction-container .notify-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .construction-container h1 {
+      font-size: 2rem; /* Slightly smaller on smaller screens */
+  }
+
+  .construction-container p {
+      font-size: 1rem; /* Slightly smaller on smaller screens */
+  }
+
+  .construction-container .countdown {
+      font-size: 1.2rem; /* Slightly smaller on smaller screens */
+  }
+
+  .construction-container .notify-btn {
+      font-size: 0.9rem; /* Slightly smaller on smaller screens */
+      padding: 8px 16px; /* Adjust button padding */
+  }
 }
 

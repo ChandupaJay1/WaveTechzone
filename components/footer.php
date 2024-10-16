@@ -15,7 +15,7 @@
     </div>
     <p>Copyright © 2048 <?php echo $_ENV['APP_NAME']; ?>. All rights reserved.</p>
     <p>
-      <a rel="nofollow" href="#" target="_blank">
+      <a rel="nofollow" href="https://www.facebook.com/chandupajayalath2/" target="_blank">
         Design By Chandupa Jayalath (NerdTech)
         <img src="./assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
       </a>
