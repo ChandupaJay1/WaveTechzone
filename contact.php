@@ -81,10 +81,19 @@ $dotenv->load();
             </div>
             <p>LUGX Gaming Template is based on the latest Bootstrap 5 CSS framework. This template is provided by TemplateMo and it is suitable for your gaming shop ecommerce websites. Feel free to use this for any purpose. Thank you.</p>
             <ul>
-              <li><span>Address</span> Sunny Isles Beach, FL 33160, United States</li>
-              <li><span>Phone</span> +123 456 7890</li>
-              <li><span>Email</span> lugx@contact.com</li>
+              <li><span>Address:</span>
+                <a href="https://www.google.com/maps?q=Sunny+Isles+Beach,+FL+33160,+United+States" target="_blank">
+                Stage II, New Town, Anuradhapura Town, Sri Lanka
+                </a>
+              </li>
+              <li><span>Phone:</span>
+                <a href="tel:+94712095954">+94 71 209 5954</a>
+              </li>
+              <li><span>Email:</span>
+                <a href="mailto:wavetechzone@gmail.com">wavetechzone@gmail.com</a>
+              </li>
             </ul>
+
           </div>
         </div>
         <div class="col-lg-6">
@@ -92,7 +101,7 @@ $dotenv->load();
             <div class="row">
               <div class="col-lg-12">
                 <div id="map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="325px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.804698421347!2d80.41825684170861!3d8.309222034076203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcf5160d51f77d%3A0x6bbab350b4841d51!2sWAVE%20TECHZONE!5e0!3m2!1sen!2slk!4v1729062126474!5m2!1sen!2slk" width="100%" height="325px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
                 </div>
               </div>
               <div class="col-lg-12">

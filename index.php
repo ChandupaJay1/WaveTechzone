@@ -415,9 +415,9 @@ $dotenv->load();
                   <h2>Contact Us <em>Now!</em> Hurry Up!</h2>
                   <p>
                     <br>
-                    <a href="+94712095954"><i class="fas fa-phone-alt"></i>&emsp;+94 71 2095 954</a>
+                    <a href="tel:+94712095954"><i class="fas fa-phone-alt"></i>&emsp;+94 71 2095 954</a>
                     <br><br>
-                    <a href="#"><i class="fas fa-envelope"></i>&emsp;email@example.com</a>
+                    <a href="mailto:wavetechzone@gmail.com"><i class="fas fa-envelope"></i>&emsp;wavetechzone@gmail.com</a>
                   </p>
                 </div>
               </div>
