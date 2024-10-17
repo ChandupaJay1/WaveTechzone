@@ -36,6 +36,11 @@ font & reset css
 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
 
+/* Other CSS rules */
+body {
+    margin: 0;
+    padding: 0;
+}
 /* 
 ---------------------------------------------
 reset
@@ -1980,14 +1985,6 @@ footer p a:hover {
 /* Cons Page */
 
 
-/* body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-} */
-
 .construction-container {
   display: flex;
   flex-direction: column;
@@ -2062,3 +2059,61 @@ footer p a:hover {
   }
 }
 
+
+.trending-filter {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.trending-filter li a {
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.trending-filter li a.is_active {
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.trending-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trending-items {
+  margin-bottom: 30px;
+}
+
+.trending-items .item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+.trending-items .thumb img {
+  width: 100%;
+}
+
+.trending-items .price {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.down-content {
+  margin-top: 10px;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.trending-items {
+  display: block; /* Ensure items are displayed */
+}

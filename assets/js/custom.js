@@ -181,3 +181,26 @@ function includeComponents() {
 			element.innerHTML = "Content could not be loaded.";
 		});
   }
+
+  
+  $(document).ready(function() {
+    // When a filter link is clicked
+    $('.trending-filter a').on('click', function(e) {
+        e.preventDefault(); // Prevent the default link behavior
+        var filterValue = $(this).data('filter'); // Get the filter value
+
+        // Show all items if "Show All" is clicked
+        if (filterValue === '*') {
+            $('.trending-items').show(); // Show all items
+        } else {
+            // Hide all items first
+            $('.trending-items').hide();
+            // Show only the filtered items
+            $(filterValue).show();
+        }
+
+        // Remove active class from all links and add to the clicked link
+        $('.trending-filter a').removeClass('is_active');
+        $(this).addClass('is_active');
+    });
+});

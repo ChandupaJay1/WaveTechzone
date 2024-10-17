@@ -14,7 +14,7 @@ switch ($path) {
         break;
     case '/shop':
         // require 'shop.php';
-        require 'shopcons.php';
+        require 'shop.php';
         break;
     case '/games':
         require 'games.php';
