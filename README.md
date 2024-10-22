@@ -9,9 +9,9 @@
   <br />
   <br />
 
-  <h2 align="center">Fitlife - Fitness Website</h2>
+  <h2 align="center">Wave Techzone - Computer Shop Website</h2>
 
-  Fitlife is a fully responsive fitness website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
+  Wave TechZone is a real client project and fully responsive Computer Shop website, <br />Responsive for all devices, build using HTML, CSS,Bootstrap5 and JavaScript.
 
   <a href="http://wavetechzone.free.nf/"><strong>➥ Live Demo</strong></a>
 
@@ -36,13 +36,13 @@ To run **WaveTechZone** locally, run this command on your git bash:
 Linux and macOS:
 
 ```bash
-sudo git clone git@github.com:ChandupaJay1/FitnessCenter.git
+sudo git clone git@github.com:ChandupaJay1/WaveTechzone.git
 ```
 
 Windows:
 
 ```bash
-git clone git@github.com:ChandupaJay1/FitnessCenter.git
+git clone git@github.com:ChandupaJay1/WaveTechzone.git
 ```
 
 ### Contact
