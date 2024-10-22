@@ -1,8 +1,8 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/github/repo-size/ChadnupaJay1/fitlife)
-  ![GitHub stars](https://img.shields.io/github/stars/ChadnupaJay1/fitlife?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/ChadnupaJay1/fitlife?style=social)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/ChadnupaJay1/WaveTechzone)
+  ![GitHub stars](https://img.shields.io/github/stars/ChadnupaJay1/WaveTechzone?style=social)
+  ![GitHub forks](https://img.shields.io/github/forks/ChadnupaJay1/WaveTechzone?style=social)
   [![Twitter Follow](https://img.shields.io/twitter/follow/ChadnupaJay1?style=social)](#)
   [![YouTube Video Views](https://img.shields.io/youtube/views/dmif_yP7cZw?style=social)](#)
 
