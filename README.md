@@ -1,10 +1,10 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/github/repo-size/ChadnupaJay1/WaveTechzone)
-  ![GitHub stars](https://img.shields.io/github/stars/ChadnupaJay1/WaveTechzone?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/ChadnupaJay1/WaveTechzone?style=social)
-  [![Twitter Follow](https://img.shields.io/twitter/follow/ChadnupaJay1?style=social)](#)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/dmif_yP7cZw?style=social)](#)
+![GitHub repo size](https://img.shields.io/github/repo-size/ChandupaJay1/WaveTechzone)
+![GitHub stars](https://img.shields.io/github/stars/ChandupaJay1/WaveTechzone?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ChandupaJay1/WaveTechzone?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/YOUR_TWITTER_USERNAME?style=social)
+![YouTube Video Views](https://img.shields.io/youtube/views/YOUR_VIDEO_ID?style=social)
 
   <br />
   <br />
