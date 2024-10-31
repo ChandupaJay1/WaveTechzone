@@ -6,28 +6,19 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // Debugging: Output environment variables to verify they are set correctly
-echo "<pre>";
-print_r($_ENV); // Check all environment variables
-echo "</pre>";
+// echo "<pre>";
+// print_r($_ENV); // Check all environment variables
+// echo "</pre>";
 
 // Check if we are in 'online' or 'offline' mode
 $appMode = $_ENV['APP_MODE'];
 
-if ($appMode === 'online') {
-    // Use online database settings
-    $dbHost = $_ENV['DB_HOST_ONLINE'];
-    $dbPort = $_ENV['DB_PORT_ONLINE'];
-    $dbName = $_ENV['DB_DATABASE_ONLINE'];
-    $dbUser = $_ENV['DB_USERNAME_ONLINE'];
-    $dbPass = $_ENV['DB_PASSWORD_ONLINE'];
-} else {
-    // Use offline database settings
-    $dbHost = $_ENV['DB_HOST_OFFLINE'];
-    $dbPort = $_ENV['DB_PORT_OFFLINE'];
-    $dbName = $_ENV['DB_DATABASE_OFFLINE'];
-    $dbUser = $_ENV['DB_USERNAME_OFFLINE'];
-    $dbPass = $_ENV['DB_PASSWORD_OFFLINE'];
-}
+// Use online database settings
+$dbHost = $_ENV['DB_HOST'];
+$dbPort = $_ENV['DB_PORT'];
+$dbName = $_ENV['DB_DATABASE'];
+$dbUser = $_ENV['DB_USERNAME'];
+$dbPass = $_ENV['DB_PASSWORD'];
 
 // Debugging output
 if (empty($dbHost) || empty($dbName) || empty($dbUser) || empty($dbPass)) {
@@ -42,10 +33,10 @@ if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 
-echo "Connected successfully in $appMode mode!";
+// echo "Connected successfully in $appMode mode!";
 
 // Fetch products from the Products table
-$query = "SELECT * FROM Products";
+$query = "SELECT * FROM product";
 $result = $connection->query($query);
 
 if ($result->num_rows > 0) {
@@ -65,9 +56,8 @@ if ($result->num_rows > 0) {
         echo "</div>";
     }
 } else {
-    echo "No products found.";
+    // echo "No products found.";
 }
 
 // Close the database connection
 $connection->close();
-?>

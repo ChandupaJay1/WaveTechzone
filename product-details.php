@@ -6,9 +6,9 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // Debugging: Output environment variables to verify they are set correctly
-echo "<pre>";
-print_r($_ENV); // Check all environment variables
-echo "</pre>";
+// echo "<pre>";
+// print_r($_ENV); // Check all environment variables
+// echo "</pre>";
 
 // Check if we are in 'online' or 'offline' mode
 $appMode = $_ENV['APP_MODE'];

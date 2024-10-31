@@ -79,8 +79,6 @@ https://templatemo.com/tm-589-lugx-gaming
 
             <div class="sheet-container">
                 <div class="sheet-header">Wave Techzone Game List</div>
-                <iframe
-                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQid64knB9-ALFV1wHhi3aqIgrgqXKF4ukg58AhoU2Fywywd5R4WOmfkwYoYXtCoZnPVCxlGFu3MFoP/pubhtml?widget=true&amp;headers=false"></iframe>
             </div>
 
 
