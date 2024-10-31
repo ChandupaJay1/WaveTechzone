@@ -31,3 +31,5 @@ try {
     // Handle errors by returning a JSON-encoded error message
     echo json_encode(["error" => $e->getMessage()]);
 }
+
+?>

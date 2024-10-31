@@ -5,22 +5,11 @@ require 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-// Check if we are in 'online' or 'offline' mode
-$appMode = $_ENV['APP_MODE'];
+$host = $_ENV['DB_HOST'];
+$db = $_ENV['DB_DATABASE'];
+$user = $_ENV['DB_USERNAME'];
+$pass = $_ENV['DB_PASSWORD'];
 
-if ($appMode === 'online') {
-  $dbHost = $_ENV['DB_HOST_ONLINE'];
-  $dbPort = $_ENV['DB_PORT_ONLINE'];
-  $dbName = $_ENV['DB_DATABASE_ONLINE'];
-  $dbUser = $_ENV['DB_USERNAME_ONLINE'];
-  $dbPass = $_ENV['DB_PASSWORD_ONLINE'];
-} else {
-  $dbHost = $_ENV['DB_HOST_OFFLINE'];
-  $dbPort = $_ENV['DB_PORT_OFFLINE'];
-  $dbName = $_ENV['DB_DATABASE_OFFLINE'];
-  $dbUser = $_ENV['DB_USERNAME_OFFLINE'];
-  $dbPass = $_ENV['DB_PASSWORD_OFFLINE'];
-}
 
 // Database connection
 try {
