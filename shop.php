@@ -95,7 +95,7 @@ $data = require("./db_connections/get_all_products.php");
                             <div class="item">
                                 <div class="thumb">
                                     <a href="product-details.php?id=<?php echo $product['id']; ?>">
-                                        <img src="<?php echo htmlspecialchars($row['image']); ?>" alt="Product Image">
+                                    <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="Product Image">
                                     </a>
                                     <span class="price"><em>$<?php echo htmlspecialchars($row['price']); ?></em></span>
                                 </div>

@@ -1,47 +1,41 @@
 <?php
 require 'vendor/autoload.php';
 
-// Load environment variables from .env file
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-// Debugging: Output environment variables to verify they are set correctly
-// echo "<pre>";
-// print_r($_ENV); // Check all environment variables
-// echo "</pre>";
-
-// Check if we are in 'online' or 'offline' mode
-$appMode = $_ENV['APP_MODE'];
-
-if ($appMode === 'online') {
-  $dbHost = $_ENV['DB_HOST_ONLINE'];
-  $dbPort = $_ENV['DB_PORT_ONLINE'];
-  $dbName = $_ENV['DB_DATABASE_ONLINE'];
-  $dbUser = $_ENV['DB_USERNAME_ONLINE'];
-  $dbPass = $_ENV['DB_PASSWORD_ONLINE'];
-} else {
-  $dbHost = $_ENV['DB_HOST_OFFLINE'];
-  $dbPort = $_ENV['DB_PORT_OFFLINE'];
-  $dbName = $_ENV['DB_DATABASE_OFFLINE'];
-  $dbUser = $_ENV['DB_USERNAME_OFFLINE'];
-  $dbPass = $_ENV['DB_PASSWORD_OFFLINE'];
+// Check if the 'id' parameter is present in the URL
+if (!isset($_GET['id'])) {
+  echo "Product ID is missing.";
+  exit;
 }
 
-// Debugging output
-if (empty($dbHost) || empty($dbName) || empty($dbUser) || empty($dbPass)) {
-  die("Database configuration variables are not set.");
+// Get the product ID from the URL
+$product_id = $_GET['id'];
+
+try {
+  // Connect to the database
+  $pdo = new PDO("mysql:host={$_ENV['DB_HOST']};dbname={$_ENV['DB_DATABASE']};charset=utf8", $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  // SQL query to fetch product details along with category name
+  $stmt = $pdo->prepare("
+        SELECT product.id, product.name, product.description, product.image, product.price, category.name AS category_name
+        FROM product
+        JOIN category ON product.category_id = category.id
+        WHERE product.id = ?
+    ");
+  $stmt->execute([$product_id]);
+  $product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  // Check if the product was found
+  if (!$product) {
+    echo "Product not found.";
+    exit;
+  }
+} catch (PDOException $e) {
+  die("Database error: " . $e->getMessage());
 }
-
-// Database connection
-$connection = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
-
-// Check connection
-if ($connection->connect_error) {
-  die("Connection failed: " . $connection->connect_error);
-}
-
-echo "Connected successfully in $appMode mode!";
-
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +45,7 @@ echo "Connected successfully in $appMode mode!";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <title><?php echo htmlspecialchars($name); ?> - Product Details</title>
+  <title><?php echo htmlspecialchars($product['name']); ?> - Product Details</title>
   <link rel="icon" href="assets/images/logo-tp-orange.ico">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -75,74 +69,34 @@ echo "Connected successfully in $appMode mode!";
 
   <?php include('./components/header.php'); ?>
 
-
   <div class="page-heading header-text">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3>Our Shop</h3>
-          <span class="breadcrumb"><a href="#">Home</a> > Our Shop</span>
+          <h3>Product Details</h3>
+          <span class="breadcrumb"><a href="#">Shop</a> > <?php echo htmlspecialchars($product['name']); ?></span>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="section trending">
+  <div class="section single-product">
     <div class="container">
-      <ul class="trending-filter">
-        <li><a class="is_active" href="#!" data-filter="*">Show All</a></li>
-        <li><a href="#!" data-filter=".adv">Mother Boards</a></li>
-        <li><a href="#!" data-filter=".str">Graphic Card</a></li>
-        <li><a href="#!" data-filter=".rac">RAM</a></li>
-        <li><a href="#!" data-filter=".ssd">SSD</a></li>
-        <li><a href="#!" data-filter=".mouse">Mouse</a></li>
-        <li><a href="#!" data-filter=".keyboard">Keyboards</a></li>
-      </ul>
-
-      <div class="row trending-box">
-        <?php
-        // Loop through each product and display
-        if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-            $id = $row['id'];
-            $name = $row['name'];
-            $category = $row['category'];
-            $image = $row['image'];
-            $price = number_format($row['price'], 2); // Format price to 2 decimal places
-
-            echo "<div class='col-lg-3 col-md-6 mb-30 trending-items {$category}'>
-                            <div class='item'>
-                                <div class='thumb'>
-                                    <a href='product-details.php?id={$id}'><img src='{$image}' alt='Product Image'></a>
-                                    <span class='price'><em>\${$price}</em>\${$price}</span>
-                                </div>
-                                <div class='down-content'>
-                                    <span class='category'>{$category}</span>
-                                    <h4>{$name}</h4>
-                                    <a href='product-details.php?id={$id}'><i class='fa fa-shopping-bag'></i></a>
-                                </div>
-                            </div>
-                        </div>";
-          }
-        } else {
-          echo "<p>No products found.</p>";
-        }
-
-        // Free result set
-        $result->free();
-        $connection->close();
-        ?>
-      </div>
-
       <div class="row">
-        <div class="col-lg-12">
-          <ul class="pagination">
-            <li><a href="#"> &lt; </a></li>
-            <li><a href="#">1</a></li>
-            <li><a class="is_active" href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#"> &gt; </a></li>
-          </ul>
+        <div class="col-lg-6 col-md-12">
+          <div class="product-image">
+            <img src="assets/images/products/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="img-fluid">
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+          <div class="product-details-content">
+            <h2 class="product-title"><?php echo htmlspecialchars($product['name']); ?></h2>
+            <span class="product-category">Category: <?php echo htmlspecialchars($product['category_name']); ?></span>
+            <h3 class="product-price">$<?php echo htmlspecialchars($product['price']); ?></h3>
+            <p class="product-description"><?php echo nl2br(htmlspecialchars($product['description'])); ?></p>
+            <a href="cart.php?action=add&id=<?php echo htmlspecialchars($product['id']); ?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+          </div>
         </div>
       </div>
     </div>
