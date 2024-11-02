@@ -13,7 +13,7 @@
       <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 
     </div>
-    <p>Copyright © 2048 <?php echo $_ENV['APP_NAME']; ?>. All rights reserved.</p>
+    <p>Copyright © 2048 <?= $_ENV['APP_NAME']; ?>. All rights reserved.</p>
     <p>
       <a rel="nofollow" href="https://www.facebook.com/chandupajayalath2/" target="_blank">
         Design By Chandupa Jayalath (NerdTech)
