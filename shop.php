@@ -91,18 +91,18 @@ $data = require("./db_connections/get_all_products.php");
             <div class="row trending-box">
                 <?php if (!empty($data)): ?>
                     <?php foreach ($data as $row): ?>
-                        <div class="col-lg-3 col-md-6 mb-30 trending-items <?php echo htmlspecialchars($row['category_name']); ?>">
+                        <div class="col-lg-3 col-md-6 mb-30 trending-items <?= htmlspecialchars($row['category_name']); ?>">
                             <div class="item">
                                 <div class="thumb">
-                                    <a href="product-details.php?id=<?php echo $product['id']; ?>">
-                                    <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="Product Image">
+                                    <a href="product-details.php?id=<?= $row['product_id']; ?>">
+                                        <img src="assets/images/products/<?= htmlspecialchars($row['image']); ?>" alt="Product Image">
                                     </a>
-                                    <span class="price"><em>$<?php echo htmlspecialchars($row['price']); ?></em></span>
+                                    <span class="price"><em>$<?= htmlspecialchars($row['price']); ?></em></span>
                                 </div>
                                 <div class="down-content">
-                                    <span class="category"><?php echo htmlspecialchars($row['category_name']); ?></span>
-                                    <h4><?php echo htmlspecialchars($row['product_name']); ?></h4>
-                                    <a href="product-details.php?id=<?php echo $row['product_id']; ?>"><i class="fa fa-shopping-bag"></i></a>
+                                    <span class="category"><?= htmlspecialchars($row['category_name']); ?></span>
+                                    <h4><?= htmlspecialchars($row['product_name']); ?></h4>
+                                    <a href="product-details.php?id=<?= $row['product_id']; ?>"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
                         </div>
