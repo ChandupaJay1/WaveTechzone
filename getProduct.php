@@ -21,7 +21,6 @@ try {
 
     // Return JSON-encoded product data
     echo json_encode($products);
-
 } catch (PDOException $e) {
     // Handle errors by returning a JSON-encoded error message
     echo json_encode(["error" => $e->getMessage()]);
