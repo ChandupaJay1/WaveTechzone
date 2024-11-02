@@ -1,47 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 
-// Load environment variables from .env file
-// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-// $dotenv->load();
-//
-// $host = $_ENV['DB_HOST'];
-// $db = $_ENV['DB_DATABASE'];
-// $user = $_ENV['DB_USERNAME'];
-// $pass = $_ENV['DB_PASSWORD'];
-//
-//
-// // Database connection
-// try {
-//   $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
-//   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// } catch (PDOException $e) {
-//   die(json_encode(["error" => $e->getMessage()]));
-// }
-//
-// // SQL query to fetch products along with their categories
-// $sql = "
-//   SELECT product.id, product.name, product.description, product.image, product.price, category.name AS category_name
-//   FROM product
-//   JOIN category ON product.category_id = category.id
-// ";
-// $stmt = $pdo->prepare($sql);
-// $stmt->execute();
-//
-// // Fetch products as an associative array
-// $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 $data = require("./db_connections/get_all_products.php");
-
-// echo '<pre>';
-// print_r($product);
-// exit('</pre>');
-
-// Check if products are fetched
-// if (empty($products)) {
-// var_dump($data);
-// die;
-// }
 ?>
 
 <!DOCTYPE html>
