@@ -114,8 +114,12 @@ if (isset($_POST['login_btn'])) {
                 <input type="submit" class="btn btn-primary" id="login-btn" name="login_btn" value="Login" />
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <a href="adminRegister.php" class="btn btn-secondary">Register</a>
+            </div> -->
+
+            <div class="form-group">
+                <a href="../index.php" class="btn btn-secondary">Back To Home</a>
             </div>
         </form>
     </div>

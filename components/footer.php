@@ -16,7 +16,7 @@
     <p>Copyright © 2048 <?= $_ENV['APP_NAME']; ?>. All rights reserved.</p>
     <p>
       <a rel="nofollow" href="https://www.facebook.com/chandupajayalath2/" target="_blank">
-        Design By Chandupa Jayalath (NerdTech)
+        Design And Published By NerdTech Software Company.
         <img src="./assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
       </a>
     </p>
