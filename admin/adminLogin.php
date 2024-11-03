@@ -93,9 +93,12 @@ if (isset($_POST['login_btn'])) {
 <body style="background-color: #F9EBEA">
 
     <section class="my-5 py-5">
+
         <div class="container text-center mt-3 pt-5">
-            <h2 class="font-weight-bold">Wellcome To Nerd Admin Panel</h2>
+            <img src="/wavetechzone/assets/images/nerdtech.png" alt="NerdTech Logo" class="mb-3" style="height: 60px;">
+            <h2 class="font-weight-bold">Welcome To Nerd Admin Panel</h2>
         </div>
+
 
         <div class="mx-auto container">
             <form id="login-form" action="adminLogin.php" method="POST">
