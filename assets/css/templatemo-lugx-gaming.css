@@ -1868,68 +1868,82 @@ body {
 }
 
 footer {
-  background-color: #212121;
-  /* Dark background for a modern feel */
-  padding: 40px 0;
-  color: #f4f4f4;
-  /* Light text for contrast */
-}
+    background-color: #212121;
+    /* Dark background for a modern feel */
+    padding: 40px 0;
+    color: #f4f4f4;
+    /* Light text for contrast */
+  }
 
-footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-}
+  footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
 
-footer p {
-  margin: 0;
-  font-size: 1em;
-  color: #cccccc;
-}
+  footer p {
+    margin: 0;
+    font-size: 0.7em;
+    color: #cccccc;
+  }
 
-footer p a {
-  color: #ffffff;
-  /* Stylish green for links */
-  text-decoration: none;
-  font-weight: bold;
-}
+  footer p a {
+    color: #ffffff;
+    /* Stylish green for links */
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-footer p a:hover {
-  text-decoration: underline;
-}
+  footer p a:hover {
+    text-decoration: underline;
+  }
 
-.footer-links {
-  margin: 20px 0;
-}
+  .footer-links {
+    margin: 20px 0;
+  }
 
-.footer-links a {
-  margin: 0 15px;
-  color: #ccc;
-  text-decoration: none;
-}
+  .footer-links a {
+    margin: 0 15px;
+    color: #ccc;
+    text-decoration: none;
+  }
 
-.footer-links a:hover {
-  color: #ffffff
-}
+  .footer-links a:hover {
+    color: #ffffff
+  }
 
-.social-icons {
-  margin: 20px 0;
-}
+  .social-icons {
+    margin: 20px 0;
+  }
 
-.social-icons a {
-  margin: 0 10px;
-  display: inline-block;
-  color: #ccc;
-  font-size: 1.5em;
-  text-decoration: none;
-  transition: color 0.3s;
-}
+  .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    color: #ccc;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
 
-.social-icons a:hover {
-  color: #f9f9f9;
-  /* Social icon hover effect */
-}
+  .social-icons a:hover {
+    color: #f9f9f9;
+    /* Social icon hover effect */
+  }
+
+  .ft-logo {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .social-icons a {
+      font-size: 1.2em;
+    }
+  }
 
 
 
@@ -2112,3 +2126,4 @@ footer p a:hover {
 .trending-items {
   display: block; /* Ensure items are displayed */
 }
+
