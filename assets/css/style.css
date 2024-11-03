@@ -161,7 +161,7 @@
  /* nev bar */
 
 
- 
+
 
  #home {
      margin-top: 5.2rem;
@@ -925,4 +925,37 @@
     font-size: 14px;
     padding: 15px 25px;
     margin-top: 15px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.sidebar .nav-link {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.sidebar .nav-link.active {
+    background-color: #343a40;
+    color: #fff;
+}
+
+/* Table styling */
+.table {
+    margin-top: 20px;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
 }
