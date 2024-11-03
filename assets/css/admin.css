@@ -1,77 +1,89 @@
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
 }
 
 .navbar-brand .font {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
 }
 
 .table-responsive {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .table thead th {
-  background-color: #343a40;
-  color: white;
+    background-color: #343a40;
+    color: white;
 }
 
 .table-hover tbody tr:hover {
-  background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 
 .alert {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .pagination .page-item .page-link {
-  color: #343a40;
+    color: #343a40;
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #343a40;
-  border-color: #343a40;
+    background-color: #343a40;
+    border-color: #343a40;
 }
 
 .navbar {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .navbar-brand .font {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
 }
 
 .navbar-nav .nav-item .nav-link {
-  font-size: 1rem;
-  color: #333;
+    font-size: 1rem;
+    color: #333;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-  color: #007bff;
+    color: #007bff;
 }
 
 .navbar-light .navbar-toggler {
-  border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 }
 
 body::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
+    width: 12px;
+    /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0);        /* color of the tracking area */
+    background: rgba(255, 255, 255, 0);
+    /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(70, 70, 70);    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid rgb(249, 249, 249);  /* creates padding around scroll thumb */
+    background-color: rgb(70, 70, 70);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgb(249, 249, 249);
+    /* creates padding around scroll thumb */
+}
+
+.ft-logo {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 4px;
 }

@@ -79,6 +79,7 @@ if (isset($_POST['login_btn'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,46 +89,59 @@ if (isset($_POST['login_btn'])) {
     <link rel="stylesheet" href="/wavetechzone/assets/css/admin.css">
     <link rel="icon" href="/wavetechzone/assets/images/icon/ico-new.png" />
 </head>
+
 <body style="background-color: #F9EBEA">
 
-<section class="my-5 py-5">
-    <div class="container text-center mt-3 pt-5">
-        <h2 class="font-weight-bold">Admin Login</h2>
-    </div>
+    <section class="my-5 py-5">
+        <div class="container text-center mt-3 pt-5">
+            <h2 class="font-weight-bold">Admin Login</h2>
+        </div>
 
-    <div class="mx-auto container">
-        <form id="login-form" action="adminLogin.php" method="POST">
-            <p style="color: red;" class="text-center">
-                <?php if (isset($_GET['error'])) echo htmlspecialchars($_GET['error']); ?>
-            </p>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" id="login-email" name="email" placeholder="Email" required />
-            </div>
+        <div class="mx-auto container">
+            <form id="login-form" action="adminLogin.php" method="POST">
+                <p style="color: red;" class="text-center">
+                    <?php if (isset($_GET['error'])) echo htmlspecialchars($_GET['error']); ?>
+                </p>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" id="login-email" name="email" placeholder="Email" required />
+                </div>
 
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" id="login-password" name="password" placeholder="Password" required />
-            </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" id="login-password" name="password" placeholder="Password" required />
+                </div>
 
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" id="login-btn" name="login_btn" value="Login" />
-            </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" id="login-btn" name="login_btn" value="Login" />
+                </div>
 
-            <!-- <div class="form-group">
+                <!-- <div class="form-group">
                 <a href="adminRegister.php" class="btn btn-secondary">Register</a>
             </div> -->
 
-            <div class="form-group">
-                <a href="../index.php" class="btn btn-secondary">Back To Home</a>
-            </div>
-        </form>
-    </div>
-</section>
+                <div class="form-group">
+                    <a href="../index.php" class="btn btn-secondary">Back To Home</a>
+                </div>
+            </form>
+        </div>
 
-<script src="assets/js/script.js"></script>
-<script src="https://kit.fontawesome.com/451b2ce250.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <p class="m-lg-3 d-flex justify-content-center align-items-center position-fixed bottom-0 w-100 text-dark p-3">
+            <a rel="nofollow" href="https://www.facebook.com/chandupajayalath2/" target="_blank" class="text-decoration-none text-dark bg-gradient">
+                Nerd Admin Panel Powered By NerdTech Software Company.
+                <img src="/wavetechzone/assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
+            </a>
+        </p>
+
+
+    </section>
+
+
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/451b2ce250.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
