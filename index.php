@@ -1,4 +1,9 @@
-<?php require_once __DIR__ . '/config.php'; ?>
+<?php
+require_once __DIR__ . '/config.php';
+
+$featured = require(__DIR__ . "/db_connections/get_featured_products.php");
+// $featured = [0 => $featured[3]];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -139,21 +144,24 @@
           </div> -->
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/trending-01.jpg" alt=""></a>
-                            <span class="price">$20</span>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
+                <?php foreach ($featured as $row): ?>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="<?= ROOT ?>/product-details?id=<?= $row['id'] ?>"><img src="<?= ROOT ?>/assets/images/products/<?= $row['image'] ?>" alt=""></a>
+                                <span class="price"><?= $row['price'] ?></span>
+                            </div>
+                            <div class="down-content">
+                                <span class="category"><?= $row['category'] ?></span>
+                                <h4><?= $row["product"] ?></h4>
+                                <a href="<?= ROOT ?>/product-details?id=<?= $row['id'] ?>"><i class="fa fa-shopping-bag"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
+            <div class="col-12 d-flex justify-content-center my-4 main-button"><a href="<?= ROOT ?>/featured">View all</a></div>
         </div>
     </div>
 
