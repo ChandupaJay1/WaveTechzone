@@ -17,16 +17,16 @@ $dotenv->load();
     <title>Contact Us</title>
 
     <!-- header logo -->
-    <link rel="icon" href="assets/images/logo-tp-orange.ico">
+    <link rel="icon" href="<?= ROOT ?>/assets/images/logo-tp-orange.ico">
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= ROOT ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/templatemo-lugx-gaming.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/owl.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
@@ -157,9 +157,9 @@ $dotenv->load();
     <?php include('./components/footer.php'); ?>
 
     <!-- Scripts -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="<?= ROOT ?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?= ROOT ?>/assets/js/custom.js"></script>
 </body>
 
 </html>

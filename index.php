@@ -1,11 +1,4 @@
-<?php
-
-require 'vendor/autoload.php';
-
-// Load the .env file
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-?>
+<?php require_once __DIR__ . '/config.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,16 +13,16 @@ $dotenv->load();
     <title>Wave TechZone</title>
 
     <!-- header logo -->
-    <link rel="icon" href="assets/images/logo-tp-orange.ico">
+    <link rel="icon" href="<?= ROOT ?>/assets/images/logo-tp-orange.ico">
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= ROOT ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/templatemo-lugx-gaming.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/owl.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <!-- Bootstrap CSS -->
@@ -91,7 +84,7 @@ $dotenv->load();
                     <a href="#">
                         <div class="item">
                             <div class="image">
-                                <img src="assets/images/services.png" alt="" style="max-width: 44px;">
+                                <img src="<?= ROOT ?>/assets/images/services.png" alt="" style="max-width: 44px;">
                             </div>
                             <h4>Desktop/Servers Repairing</h4>
                         </div>
@@ -101,7 +94,7 @@ $dotenv->load();
                     <a href="#">
                         <div class="item">
                             <div class="image">
-                                <img src="assets/images/services2.png"" alt="" style=" max-width: 44px;">
+                                <img src="<?= ROOT ?>/assets/images/services2.png"" alt="" style=" max-width: 44px;">
                             </div>
                             <h4>LCD/LED TV Monitor Repairing</h4>
                         </div>
@@ -111,7 +104,7 @@ $dotenv->load();
                     <a href="#">
                         <div class="item">
                             <div class="image">
-                                <img src="assets/images/services3.png" alt="" style="max-width: 44px;">
+                                <img src="<?= ROOT ?>/assets/images/services3.png" alt="" style="max-width: 44px;">
                             </div>
                             <h4>Photocopy,Duplo & Scanner Repairing</h4>
                         </div>
@@ -121,7 +114,7 @@ $dotenv->load();
                     <a href="#">
                         <div class="item">
                             <div class="image">
-                                <img src="assets/images/services4.png" alt="" style="max-width: 44px;">
+                                <img src="<?= ROOT ?>/assets/images/services4.png" alt="" style="max-width: 44px;">
                             </div>
                             <h4>Network/CCTV/Security Systems</h4>
                         </div>
@@ -149,7 +142,7 @@ $dotenv->load();
                 <div class="col-lg-3 col-md-6">
                     <div class="item">
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/trending-01.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/trending-01.jpg" alt=""></a>
                             <span class="price">$20</span>
                         </div>
                         <div class="down-content">
@@ -176,21 +169,21 @@ $dotenv->load();
         <div class="carousel-inner">
             <!-- First Slide with Lazy-Loading -->
             <div class="carousel-item active">
-                <img data-src="assets/images/Cover 1.png" class="d-block w-100 lazyload" alt="Slide 1 Image">
+                <img data-src="<?= ROOT ?>/assets/images/Cover 1.png" class="d-block w-100 lazyload" alt="Slide 1 Image">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
 
             <!-- Second Slide with Lazy-Loading -->
             <div class="carousel-item">
-                <img data-src="assets/images/Cover 2.png" class="d-block w-100 lazyload" alt="Slide 2 Image">
+                <img data-src="<?= ROOT ?>/assets/images/Cover 2.png" class="d-block w-100 lazyload" alt="Slide 2 Image">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
 
             <!-- Third Slide with Lazy-Loading -->
             <div class="carousel-item">
-                <img data-src="assets/images/Cover 6.png" class="d-block w-100 lazyload" alt="Slide 3 Image">
+                <img data-src="<?= ROOT ?>/assets/images/Cover 6.png" class="d-block w-100 lazyload" alt="Slide 3 Image">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
@@ -224,7 +217,7 @@ $dotenv->load();
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="item">
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/top-game-01.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/top-game-01.jpg" alt=""></a>
                         </div>
                         <div class="down-content">
                             <span class="category">Adventure</span>
@@ -236,7 +229,7 @@ $dotenv->load();
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="item">
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/top-game-02.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/top-game-02.jpg" alt=""></a>
                         </div>
                         <div class="down-content">
                             <span class="category">Adventure</span>
@@ -248,7 +241,7 @@ $dotenv->load();
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="item">
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/top-game-03.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/top-game-03.jpg" alt=""></a>
                         </div>
                         <div class="down-content">
                             <span class="category">Adventure</span>
@@ -260,7 +253,7 @@ $dotenv->load();
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="item">
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/top-game-04.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/top-game-04.jpg" alt=""></a>
                         </div>
                         <div class="down-content">
                             <span class="category">Adventure</span>
@@ -272,7 +265,7 @@ $dotenv->load();
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="item">
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/top-game-05.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/top-game-05.jpg" alt=""></a>
                         </div>
                         <div class="down-content">
                             <span class="category">Adventure</span>
@@ -284,7 +277,7 @@ $dotenv->load();
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="item">
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/top-game-06.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/top-game-06.jpg" alt=""></a>
                         </div>
                         <div class="down-content">
                             <span class="category">Adventure</span>
@@ -310,7 +303,7 @@ $dotenv->load();
                     <div class="item">
                         <h4>Action</h4>
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/categories-01.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/categories-01.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -318,7 +311,7 @@ $dotenv->load();
                     <div class="item">
                         <h4>Action</h4>
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/categories-05.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/categories-05.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -326,7 +319,7 @@ $dotenv->load();
                     <div class="item">
                         <h4>Action</h4>
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/categories-03.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/categories-03.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -334,7 +327,7 @@ $dotenv->load();
                     <div class="item">
                         <h4>Action</h4>
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/categories-04.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/categories-04.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -342,7 +335,7 @@ $dotenv->load();
                     <div class="item">
                         <h4>Action</h4>
                         <div class="thumb">
-                            <a href="product-details.html"><img src="assets/images/categories-05.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="<?= ROOT ?>/assets/images/categories-05.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -396,12 +389,12 @@ $dotenv->load();
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/counter.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="<?= ROOT ?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?= ROOT ?>/assets/js/isotope.min.js"></script>
+    <script src="<?= ROOT ?>/assets/js/owl-carousel.js"></script>
+    <script src="<?= ROOT ?>/assets/js/counter.js"></script>
+    <script src="<?= ROOT ?>/assets/js/custom.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
     <!-- Bootstrap and jQuery JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

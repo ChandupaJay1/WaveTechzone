@@ -1,7 +1,7 @@
 <?php
-require 'vendor/autoload.php';
+require_once __DIR__ . '/config.php';
 
-$data = require("./db_connections/get_all_products.php");
+$data = require(__DIR__ . "/db_connections/get_all_products.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,12 +12,12 @@ $data = require("./db_connections/get_all_products.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Our Shop</title>
-    <link rel="icon" href="assets/images/logo-tp-orange.ico">
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="icon" href="<?= ROOT ?>/assets/images/logo-tp-orange.ico">
+    <link href="<?= ROOT ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= asset('css/fontawesome.css') ?>" />
+    <link rel="stylesheet" href="<?= asset('css/templatemo-lugx-gaming.css') ?>" />
+    <link rel="stylesheet" href="<?= asset('css/owl.css') ?>" />
+    <link rel="stylesheet" href="<?= asset('css/animate.css') ?>" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
@@ -55,7 +55,7 @@ $data = require("./db_connections/get_all_products.php");
                             <div class="item">
                                 <div class="thumb">
                                     <a href="product-details.php?id=<?= $row['product_id']; ?>">
-                                        <img src="assets/images/products/<?= htmlspecialchars($row['image']); ?>" alt="Product Image">
+                                        <img src='<?= asset("images/products/" . htmlspecialchars($row["image"])) ?>' alt="Product Image">
                                     </a>
                                     <span class="price"><em>$<?= htmlspecialchars($row['price']); ?></em></span>
                                 </div>
@@ -91,9 +91,9 @@ $data = require("./db_connections/get_all_products.php");
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/custom.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= ROOT ?>/assets/js/custom.js"></script>
+<script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
         // Filter function

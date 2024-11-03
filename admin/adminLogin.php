@@ -2,7 +2,7 @@
 session_start();
 
 // Use absolute path to include config.php
-require __DIR__ . '/../config.php';
+require_once __DIR__ . '/../config.php';
 
 // Redirect if admin is already logged in
 if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
@@ -56,15 +56,15 @@ if (isset($_POST['login_btn'])) {
                 $_SESSION['admin_logged_in'] = true;
 
                 // header('Location: /wavetechzone/adminDashboard.php?login_success=Logged in successfully!');
-                header('Location: /wavetechzone/adminDashboard.php?login_success=Logged in successfully!');
+                header("Location: " . ROOT . "/adminDashboard.php?login_success=Logged in successfully!");
 
                 exit;
             } else {
-                header('Location: /wavetechzone/admin/adminLogin.php?error=Incorrect password');
+                header("Location: " . ROOT . "/admin/adminLogin.php?error=Incorrect password");
                 exit;
             }
         } else {
-            header('Location: /wavetechzone/admin/adminLogin.php?error=Email not found');
+            header("Location: " . ROOT . "/admin/adminLogin.php?error=Email not found");
             exit;
         }
 
@@ -85,9 +85,9 @@ if (isset($_POST['login_btn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nerd Admin - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/wavetechzone/assets/css/style.css">
-    <link rel="stylesheet" href="/wavetechzone/assets/css/admin.css">
-    <link rel="icon" href="/wavetechzone/assets/images/nerdtech.png" />
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/admin.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/style.css">
+    <link rel="icon" href="<?= ROOT ?>/assets/images/nerdtech.png" />
 </head>
 
 <body style="background-color: #F9EBEA">
@@ -95,7 +95,7 @@ if (isset($_POST['login_btn'])) {
     <section class="my-5 py-5">
 
         <div class="container text-center mt-3 pt-5">
-            <img src="/wavetechzone/assets/images/nerdtech.png" alt="NerdTech Logo" class="mb-3" style="height: 60px;">
+            <img src="<?= ROOT ?>/assets/images/nerdtech.png" alt="NerdTech Logo" class="mb-3" style="height: 60px;">
             <h2 class="font-weight-bold">Welcome To Nerd Admin Panel</h2>
         </div>
 
@@ -124,7 +124,7 @@ if (isset($_POST['login_btn'])) {
             </div> -->
 
                 <div class="form-group">
-                    <a href="../index.php" class="btn btn-secondary">Back To Home</a>
+                    <a href="<?= ROOT ?>" class="btn btn-secondary">Back To Home</a>
                 </div>
             </form>
         </div>
@@ -132,7 +132,7 @@ if (isset($_POST['login_btn'])) {
         <p class="m-lg-3 d-flex justify-content-center align-items-center position-fixed bottom-0 w-100 text-dark p-3">
             <a rel="nofollow" href="https://www.facebook.com/chandupajayalath2/" target="_blank" class="text-decoration-none text-dark bg-gradient">
                 Nerd Admin Panel Powered By NerdTech Software Company.
-                <img src="/wavetechzone/assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
+                <img src="<?= ROOT ?>/assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
             </a>
         </p>
 
@@ -141,7 +141,7 @@ if (isset($_POST['login_btn'])) {
 
 
 
-    <script src="assets/js/script.js"></script>
+    <script src="<?= ROOT ?>/assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/451b2ce250.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require_once dirname(__DIR__) . '/config.php';
 
 // Database connection details from .env
 $host = $_ENV['DB_HOST'];
@@ -20,18 +20,14 @@ try {
         product.name AS product_name,
         product.image,
         product.price,
-        category.name AS category_name 
-        FROM product INNER JOIN category 
+        category.name AS category_name
+        FROM product INNER JOIN category
         ON `product`.`category_id`=`category`.`id`"
     );
     $stmt->execute();
 
     // Fetch products as an associative array
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Return JSON-encoded product data
-    // echo json_encode($products);
-
 } catch (PDOException $e) {
     // Handle errors by returning a JSON-encoded error message
     echo json_encode(["error" => $e->getMessage()]);
