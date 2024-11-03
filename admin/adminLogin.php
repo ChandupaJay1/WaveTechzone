@@ -83,18 +83,18 @@ if (isset($_POST['login_btn'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <title>Nerd Admin - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/wavetechzone/assets/css/style.css">
     <link rel="stylesheet" href="/wavetechzone/assets/css/admin.css">
-    <link rel="icon" href="/wavetechzone/assets/images/icon/ico-new.png" />
+    <link rel="icon" href="/wavetechzone/assets/images/nerdtech.png" />
 </head>
 
 <body style="background-color: #F9EBEA">
 
     <section class="my-5 py-5">
         <div class="container text-center mt-3 pt-5">
-            <h2 class="font-weight-bold">Admin Login</h2>
+            <h2 class="font-weight-bold">Wellcome To Nerd Admin Panel</h2>
         </div>
 
         <div class="mx-auto container">
