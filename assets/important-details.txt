@@ -1,0 +1,2 @@
+header
+<li><a href="games" <?= (isset($path) && $path === '/games') ? 'class="active"' : '' ?>>Games</a></li>
