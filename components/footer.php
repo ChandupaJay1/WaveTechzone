@@ -16,7 +16,7 @@
 
             <div class="text-center">
                 <p>
-                    <a rel="nofollow" href="https://www.facebook.com/chandupajayalath2/" target="_blank">
+                    <a rel="nofollow" href="https://www.facebook.com/nerdtechinfo" target="_blank">
                         Designed And Published By NerdTech Software Development LK.
                         <img src="./assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
                     </a>

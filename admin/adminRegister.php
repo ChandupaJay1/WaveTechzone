@@ -66,7 +66,8 @@ if (isset($_POST['register_btn'])) {
 
     <section class="my-5 py-5">
         <div class="container text-center mt-3 pt-5">
-            <h2 class="font-weight-bold">Admin Register</h2>
+            <img src="<?= ROOT ?>/assets/images/nerdtech.png" alt="NerdTech Logo" class="mb-3" style="height: 60px;">
+            <h2 class="font-weight-bold">Nerd Admin Panel Registration</h2>
         </div>
 
         <div class="mx-auto container">
@@ -108,6 +109,13 @@ if (isset($_POST['register_btn'])) {
             </form>
         </div>
     </section>
+
+    <p class="m-lg-3 d-flex justify-content-center align-items-center position-fixed bottom-0 w-100 text-dark p-3">
+        <a rel="nofollow" href="https://www.facebook.com/nerdtechinfo" target="_blank" class="text-decoration-none text-dark bg-gradient">
+            Nerd Admin Panel Powered By NerdTech Software Company.
+            <img src="<?= ROOT ?>/assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
+        </a>
+    </p>
 
     <script src="<?= ROOT ?>/assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/451b2ce250.js" crossorigin="anonymous"></script>

@@ -31,7 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="container-fluid">
 
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="/assets/images/nerdtech.png" alt="Logo" height="35" class="d-inline-block align-text-top">
+                <img src="assets\images\nerdtech.png" alt="Logo" height="35" class="d-inline-block align-text-top">
                 <span class="font ms-3">Nerd Admin Panel</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

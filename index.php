@@ -135,7 +135,7 @@ $featured = require(__DIR__ . "/db_connections/get_featured_products.php");
                 <div class="col-lg-6">
                     <div class="section-heading">
                         <h6>Trending</h6>
-                        <h2>Trending Games</h2>
+                        <h2>Trending Products</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">

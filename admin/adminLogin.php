@@ -125,7 +125,7 @@ if (isset($_POST['login_btn'])) {
         </div>
 
         <p class="m-lg-3 d-flex justify-content-center align-items-center position-fixed bottom-0 w-100 text-dark p-3">
-            <a rel="nofollow" href="https://www.facebook.com/chandupajayalath2/" target="_blank" class="text-decoration-none text-dark bg-gradient">
+            <a rel="nofollow" href="https://www.facebook.com/nerdtechinfo" target="_blank" class="text-decoration-none text-dark bg-gradient">
                 Nerd Admin Panel Powered By NerdTech Software Company.
                 <img src="<?= ROOT ?>/assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
             </a>
