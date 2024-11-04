@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 
 // Redirect if admin is already logged in
 if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
-    header('Location: /wavetechzone/adminDashboard.php');
+    header("Location: " . ROOT . "/adminDashboard");
     exit;
 }
 
@@ -55,16 +55,15 @@ if (isset($_POST['login_btn'])) {
                 $_SESSION['email'] = $admin_email;
                 $_SESSION['admin_logged_in'] = true;
 
-                // header('Location: /wavetechzone/adminDashboard.php?login_success=Logged in successfully!');
-                header("Location: " . ROOT . "/adminDashboard.php?login_success=Logged in successfully!");
+                header("Location: " . ROOT . "/adminDashboard?login_success=Logged in successfully!");
 
                 exit;
             } else {
-                header("Location: " . ROOT . "/admin/adminLogin.php?error=Incorrect password");
+                header("Location: " . ROOT . "/admin?error=Incorrect password");
                 exit;
             }
         } else {
-            header("Location: " . ROOT . "/admin/adminLogin.php?error=Email not found");
+            header("Location: " . ROOT . "/admin?error=Email not found");
             exit;
         }
 
@@ -101,7 +100,7 @@ if (isset($_POST['login_btn'])) {
 
 
         <div class="mx-auto container">
-            <form id="login-form" action="adminLogin.php" method="POST">
+            <form id="login-form" action="" method="POST">
                 <p style="color: red;" class="text-center">
                     <?php if (isset($_GET['error'])) echo htmlspecialchars($_GET['error']); ?>
                 </p>
@@ -118,10 +117,6 @@ if (isset($_POST['login_btn'])) {
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" id="login-btn" name="login_btn" value="Login" />
                 </div>
-
-                <!-- <div class="form-group">
-                <a href="adminRegister.php" class="btn btn-secondary">Register</a>
-            </div> -->
 
                 <div class="form-group">
                     <a href="<?= ROOT ?>" class="btn btn-secondary">Back To Home</a>

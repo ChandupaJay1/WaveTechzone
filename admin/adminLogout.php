@@ -1,10 +1,8 @@
 <?php
 
-
-
 session_start();
 
-require __DIR__ . '/../config.php';
+require_once __DIR__ . '/../config.php';
 
 // Unset all session values
 $_SESSION = array();
@@ -26,5 +24,5 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Redirect to the admin login page
-header('Location: adminLogin.php');
+header("Location: " . ROOT . "/admin");
 exit;

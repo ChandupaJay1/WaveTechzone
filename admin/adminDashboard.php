@@ -1,15 +1,15 @@
 <?php
 session_start();
-require __DIR__ . '/../config.php';
+require_once __DIR__ . '/../config.php';
 
 // Check if admin is logged in
 if (!isset($_SESSION['admin_logged_in'])) {
-    header('Location: adminLogin.php');
+    header("Location: " . ROOT . "/admin");
     exit;
 }
 
 // Include admin header
-include('admin/adminHeader.php');
+include('adminHeader.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,13 +105,13 @@ include('admin/adminHeader.php');
                     <tbody>
                         <?php while ($row = $products->fetch_assoc()): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($row['id']); ?></td>
-                                <td><?php echo htmlspecialchars($row['name']); ?></td>
-                                <td><?php echo htmlspecialchars($row['category_id']); ?></td>
-                                <td><?php echo htmlspecialchars($row['description']); ?></td>
-                                <td><img src="/wavetechzone/assets/images/products/<?php echo htmlspecialchars($row['image']); ?>" alt="Product Image" height="50"></td>
-                                <td><?php echo htmlspecialchars($row['price']); ?></td>
-                                <td><?php echo $row['featured'] ? 'Yes' : 'No'; ?></td>
+                                <td><?= htmlspecialchars($row['id']); ?></td>
+                                <td><?= htmlspecialchars($row['name']); ?></td>
+                                <td><?= htmlspecialchars($row['category_id']); ?></td>
+                                <td><?= htmlspecialchars($row['description']); ?></td>
+                                <td><img src="<?= ROOT ?>/assets/images/products/<?= htmlspecialchars($row['image']); ?>" alt="Product Image" height="50"></td>
+                                <td><?= htmlspecialchars($row['price']); ?></td>
+                                <td><?= $row['featured'] ? 'Yes' : 'No'; ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
@@ -121,8 +121,8 @@ include('admin/adminHeader.php');
                 <nav>
                     <ul class="pagination">
                         <?php for ($page = 1; $page <= $total_no_of_pages; $page++): ?>
-                            <li class="page-item <?php echo $page_no == $page ? 'active' : ''; ?>">
-                                <a class="page-link" href="?page_no=<?php echo $page; ?>"><?php echo $page; ?></a>
+                            <li class="page-item <?= $page_no == $page ? 'active' : ''; ?>">
+                                <a class="page-link" href="?page_no=<?= $page; ?>"><?= $page; ?></a>
                             </li>
                         <?php endfor; ?>
                     </ul>

@@ -19,7 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/admin.css">
-    <link rel="icon" href="<?= ROOT ?>/wavetechzone/assets/images/nerdtech.png" />
+    <link rel="icon" href="<?= ROOT ?>/assets/images/nerdtech.png" />
 
 </head>
 
@@ -31,7 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="container-fluid">
 
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="/wavetechzone/assets/images/nerdtech.png" alt="Logo" height="35" class="d-inline-block align-text-top">
+                <img src="/assets/images/nerdtech.png" alt="Logo" height="35" class="d-inline-block align-text-top">
                 <span class="font ms-3">Nerd Admin Panel</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <?php if (isset($_SESSION['admin_logged_in'])) { ?>
 
                         <li class="nav-item">
-                            <a href="admin/adminLogout.php" class="nav-link btn btn-outline-dark">Logout</a>
+                            <a href="<?= ROOT ?>/adminLogout" class="nav-link btn btn-outline-dark">Logout</a>
                         </li>
 
                     <?php } ?>
