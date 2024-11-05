@@ -14,11 +14,11 @@ $data = require(__DIR__ . "/db_connections/get_all_products.php");
     <title>Our Shop</title>
     <link rel="icon" href="<?= ROOT ?>/assets/images/logo-tp-orange.ico">
     <link href="<?= ROOT ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="<?= asset('css/fontawesome.css') ?>" />
     <link rel="stylesheet" href="<?= asset('css/templatemo-lugx-gaming.css') ?>" />
     <link rel="stylesheet" href="<?= asset('css/owl.css') ?>" />
     <link rel="stylesheet" href="<?= asset('css/animate.css') ?>" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -92,8 +92,8 @@ $data = require(__DIR__ . "/db_connections/get_all_products.php");
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= ROOT ?>/assets/js/isotope.min.js"></script>
 <script src="<?= ROOT ?>/assets/js/custom.js"></script>
-<script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
         // Filter function
