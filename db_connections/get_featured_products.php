@@ -26,6 +26,7 @@ try {
         FROM product INNER JOIN category
         ON `product`.`category_id`=`category`.`id`
         WHERE `product`.`featured`=1
+        ORDER BY created_at DESC
         LIMIT $limit"
     );
     $stmt->execute();
