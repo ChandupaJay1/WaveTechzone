@@ -1,3 +1,14 @@
+# Set maximum file upload size
+php_value upload_max_filesize 20M
+
+# Set maximum POST data size
+php_value post_max_size 30M
+
+# Optionally, increase max execution time and input time for large uploads
+php_value max_execution_time 600
+php_value max_input_time 600
+
+
 RewriteEngine On
 
 # Redirect all requests to router.php
