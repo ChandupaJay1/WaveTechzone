@@ -37,22 +37,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $featured = isset($_POST['featured']) ? $_POST['featured'] : 0;
 
     // Handle image upload
-    $target_dir = __DIR__ . "/../assets/images/products/";
+    $target_dir = SERVER_ROOT . "/assets/images/products/";
     $image = $_FILES['image'];
     $target_file = $target_dir . basename($image["name"]);
+    $msg = "";
+    $success = false;
+
     if (move_uploaded_file($image["tmp_name"], $target_file)) {
         // Insert product data into database
-        $stmt = $conn->prepare("INSERT INTO `product` (name, category_id, description, image, price, featured, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, NOW(), NOW())");
+        $stmt = $conn->prepare("INSERT INTO `product` (name, category_id, description, image, price, featured) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param('sissdi', $name, $category_id, $description, $image["name"], $price, $featured);
 
         if ($stmt->execute()) {
-            echo "<p class='alert alert-success'>Product added successfully.</p>";
+            $msg = "Product added successfully.";
+            $success = true;
         } else {
-            echo "<p class='alert alert-danger'>Error adding product: " . $conn->error . "</p>";
+            $msg = "Error adding product: " . $conn->error;
         }
     } else {
-        echo "<p class='alert alert-danger'>Error uploading image.</p>";
+        $msg = "Error uploading image.";
     }
+
+    $_SESSION["result"] = ["success" => $success, "msg" => $msg];
+
+    header("Location: " . ROOT . "/adminAddProducts");
+    die;
 }
 ?>
 
@@ -68,6 +77,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
+    <div id="result">
+        <?php $result = $_SESSION['result'] ?? []; ?>
+        <?php if (!empty($result) && !empty($result['msg'] && !empty($result['success']))): ?>
+            <?php
+            $msg = $result['msg'];
+            $success = $result['success'];
+            $_SESSION["result"] = null;
+            ?>
+            <p class='alert alert-<?= $success ? "success" : "danger" ?>'>
+                <?= $result["msg"] ?>
+            </p>
+        <?php endif; ?>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
