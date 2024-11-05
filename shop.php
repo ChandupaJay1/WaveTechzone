@@ -54,7 +54,7 @@ $data = require(__DIR__ . "/db_connections/get_all_products.php");
                         <div class="col-lg-3 col-md-6 mb-30 trending-items <?= htmlspecialchars($row['category_name']); ?>">
                             <div class="item">
                                 <div class="thumb">
-                                    <a href="product-details.php?id=<?= $row['product_id']; ?>">
+                                    <a href="<?= ROOT ?>/product-details?id=<?= $row['product_id']; ?>">
                                         <img src='<?= asset("images/products/" . htmlspecialchars($row["image"])) ?>' alt="Product Image">
                                     </a>
                                     <span class="price"><em>$<?= htmlspecialchars($row['price']); ?></em></span>
@@ -62,7 +62,7 @@ $data = require(__DIR__ . "/db_connections/get_all_products.php");
                                 <div class="down-content">
                                     <span class="category"><?= htmlspecialchars($row['category_name']); ?></span>
                                     <h4><?= htmlspecialchars($row['product_name']); ?></h4>
-                                    <a href="product-details.php?id=<?= $row['product_id']; ?>"><i class="fa fa-shopping-bag"></i></a>
+                                    <a href="<?= ROOT ?>/product-details?id=<?= $row['product_id']; ?>"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
                         </div>
