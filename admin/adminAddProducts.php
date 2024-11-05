@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = $_POST['price'];
     $featured = isset($_POST['featured']) ? $_POST['featured'] : 0;
 
-    dd($_FILES);
+    dd($_FILES, ini_get('upload_max_filesize'), ini_get('post_max_size'));
 
     // Handle image upload
     $target_dir = __DIR__ . "/../assets/images/products/";
