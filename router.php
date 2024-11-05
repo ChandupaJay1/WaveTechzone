@@ -51,6 +51,14 @@ switch ($path) {
     case '/adminRegister/':
         require 'admin/adminRegister.php';
         break;
+    case '/adminAddProducts':
+    case '/adminAddProducts/':
+        require 'admin/adminAddProducts.php';
+        break;
+    case '/handleProduct':
+    case '/handleProduct/':
+        require 'admin/addCatupdelpro.php';
+        break;
     default:
         http_response_code(404);
         exit("Page not found");

@@ -30,16 +30,13 @@ include('adminHeader.php');
                 <div class="position-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" href="#">Dashboard</a>
+                        <a class="nav-link active text-white"  href="<?= ROOT ?>/admin" <?= (isset($path) && $path === '/admin') ? 'class="active"' : '' ?>">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Products</a>
+                            <a class="nav-link text-white" href="<?= ROOT ?>/adminAddProducts" <?= (isset($path) && $path === '/adminAddProducts') ? 'class="active"' : '' ?>">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Orders</a>
+                        <a class="nav-link text-white"  href="<?= ROOT ?>/handleProduct" <?= (isset($path) && $path === '/handleProduct') ? 'class="active"' : '' ?>">Handle Product</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Settings</a>
@@ -95,7 +92,6 @@ include('adminHeader.php');
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Category ID</th>
                             <th>Description</th>
                             <th>Image</th>
                             <th>Price</th>
@@ -107,7 +103,6 @@ include('adminHeader.php');
                             <tr>
                                 <td><?= htmlspecialchars($row['id']); ?></td>
                                 <td><?= htmlspecialchars($row['name']); ?></td>
-                                <td><?= htmlspecialchars($row['category_id']); ?></td>
                                 <td><?= htmlspecialchars($row['description']); ?></td>
                                 <td><img src="<?= ROOT ?>/assets/images/products/<?= htmlspecialchars($row['image']); ?>" alt="Product Image" height="50"></td>
                                 <td><?= htmlspecialchars($row['price']); ?></td>
