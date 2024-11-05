@@ -36,13 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = $_POST['price'];
     $featured = isset($_POST['featured']) ? $_POST['featured'] : 0;
 
+    dd($_FILES);
+
     // Handle image upload
     $target_dir = __DIR__ . "/../assets/images/products/";
     $image = $_FILES['image'];
     $target_file = $target_dir . basename($image["name"]);
     if (move_uploaded_file($image["tmp_name"], $target_file)) {
         // Insert product data into database
-        $stmt = $conn->prepare("INSERT INTO `product` (name, category_id, description, image, price, featured, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, NOW(), NOW())");
+        $stmt = $conn->prepare("INSERT INTO `product` (name, category_id, description, image, price, featured) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param('sissdi', $name, $category_id, $description, $image["name"], $price, $featured);
 
         if ($stmt->execute()) {
