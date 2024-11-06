@@ -31,15 +31,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Run Locally
 
-To run **WaveTechZone** locally, run this command on your git bash:
-
-Linux and macOS:
-
-```bash
-sudo git clone git@github.com:ChandupaJay1/WaveTechzone.git
-```
-
-Windows:
+To run **WaveTechZone** locally, run this command in your terminal:
 
 ```bash
 git clone git@github.com:ChandupaJay1/WaveTechzone.git
