@@ -1,6 +1,18 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/functions.php';
+
+// TEST:
+//
+// $trace = debug_backtrace();
+// if (isset($trace[0]['file'])) {
+//     echo "<br><br>Current file: " . $trace[0]['file'] . " : line " . $trace[0]['line'] . "<br>";
+// }
+// if (isset($trace[1]['file'])) {
+//     echo "Included by: " . $trace[1]['file']. " : line " . $trace[1]['line'] . "<br><br>";
+// }
+// var_dump(__FILE__ . ' -> start<br>');
+
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/functions.php';
 
 // Load environment variables from .env file
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
