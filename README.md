@@ -27,10 +27,10 @@ git clone git@github.com:ChandupaJay1/WaveTechzone.git
 
 ## Demo Screeshots
 
-![Home](./readme-assets/home.png)
-![Contact](./readme-assets/contact.png)
-![Admin login](./readme-assets/admin-login.png)
-![Admin dashboard](./readme-assets/admin-dashboard.png)
+![Home](./readme-assets/home.jpeg)
+![Contact](./readme-assets/contact.jpeg)
+![Admin login](./readme-assets/admin-login.jpeg)
+![Admin dashboard](./readme-assets/admin-dashboard.jpeg)
 
 ## Contact
 
