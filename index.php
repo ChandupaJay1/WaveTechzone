@@ -1,39 +1,11 @@
 <?php
-require_once __DIR__ . '/config.php';
-
-$featured = require(__DIR__ . "/db_connections/get_featured_products.php");
-// $featured = [0 => $featured[3]];
+$featured = require_once(__DIR__ . "/db_connections/get_featured_products.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <title>Wave TechZone</title>
-
-    <!-- header logo -->
-    <link rel="icon" href="<?= ROOT ?>/assets/images/logo-tp-orange.ico">
-
-    <!-- Bootstrap core CSS -->
-    <link href="<?= ROOT ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/templatemo-lugx-gaming.css">
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/owl.css">
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/animate.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-</head>
+<?php include_once "./components/head.php" ?>
 
 <body>
 
@@ -148,7 +120,9 @@ $featured = require(__DIR__ . "/db_connections/get_featured_products.php");
                     <div class="col-lg-3 col-md-6">
                         <div class="item">
                             <div class="thumb">
-                                <a href="<?= ROOT ?>/product-details?id=<?= $row['id'] ?>"><img src="<?= ROOT ?>/assets/images/products/<?= $row['image'] ?>" alt=""></a>
+                                <a href="<?= ROOT ?>/product-details?id=<?= $row['id'] ?>">
+                                    <img src="<?= ROOT ?>/assets/images/products/<?= $row['image'] ?>" alt="">
+                                </a>
                                 <span class="price"><?= $row['price'] ?></span>
                             </div>
                             <div class="down-content">
@@ -394,23 +368,7 @@ $featured = require(__DIR__ . "/db_connections/get_featured_products.php");
     </div>
 
     <?php include('./components/footer.php'); ?>
-
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="<?= ROOT ?>/vendor/jquery/jquery.min.js"></script>
-    <script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?= ROOT ?>/assets/js/isotope.min.js"></script>
-    <script src="<?= ROOT ?>/assets/js/owl-carousel.js"></script>
-    <script src="<?= ROOT ?>/assets/js/counter.js"></script>
-    <script src="<?= ROOT ?>/assets/js/custom.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
-    <!-- Bootstrap and jQuery JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-    <!-- LazyLoad Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
-
+    <?php include('./components/scripts.php'); ?>
 </body>
 
 </html>

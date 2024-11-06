@@ -1,8 +1,5 @@
 <?php
 
-include_once __DIR__ . '/../config.php';
-
-
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -24,14 +21,12 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 
 <body>
-
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
 
         <div class="container-fluid">
 
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets\images\nerdtech.png" alt="Logo" height="35" class="d-inline-block align-text-top">
+                    <img src="<?= ROOT ?>/assets\images\nerdtech.png" alt="Logo" height="35" class="d-inline-block align-text-top">
                 <span class="font ms-3">Nerd Admin Panel</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,8 +49,6 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
         </div>
     </nav>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 

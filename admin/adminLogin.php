@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-// Use absolute path to include config.php
-require_once __DIR__ . '/../config.php';
-
 // Redirect if admin is already logged in
 if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
     header("Location: " . ROOT . "/adminDashboard");

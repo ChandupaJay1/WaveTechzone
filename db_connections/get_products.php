@@ -1,6 +1,6 @@
 <?PHP
 
-require 'vendor/autoload.php';
+require_once __DIR__ . '/../config.php';
 
 $host = $_ENV['DB_HOST'];
 $db = $_ENV['DB_DATABASE'];

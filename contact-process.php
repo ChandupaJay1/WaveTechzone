@@ -1,12 +1,8 @@
 <?php
-require 'vendor/autoload.php';
+require_once __DIR__ . '/../config.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-// Load the .env file
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 // Initialize variables
 $name = $surname = $email = $subject = $message = "";

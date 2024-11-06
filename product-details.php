@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/config.php';
+require_once SERVER_ROOT . '/config.php';
 
 // Check if the 'id' parameter is present in the URL
 if (!isset($_GET['id'])) {
@@ -38,19 +38,7 @@ try {
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title><?= htmlspecialchars($product['name']); ?> - Product Details</title>
-    <link rel="icon" href="<?= ROOT ?>/assets/images/logo-tp-orange.ico">
-    <link href="<?= ROOT ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?= asset('css/fontawesome.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/templatemo-lugx-gaming.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/owl.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/animate.css') ?>">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-</head>
+<?php include "./components/head.php" ?>
 
 <body>
     <div id="js-preloader" class="js-preloader">
@@ -103,13 +91,8 @@ try {
     </div>
 
     <?php include('./components/footer.php'); ?>
+    <?php include('./components/scripts.php'); ?>
 
-    <script src="<?= ROOT ?>/vendor/jquery/jquery.min.js"></script>
-    <script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?= ROOT ?>/assets/js/isotope.min.js"></script>
-    <script src="<?= ROOT ?>/assets/js/owl-carousel.js"></script>
-    <script src="<?= ROOT ?>/assets/js/counter.js"></script>
-    <script src="<?= ROOT ?>/assets/js/custom.js"></script>
 </body>
 
 </html>

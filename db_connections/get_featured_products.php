@@ -1,5 +1,4 @@
 <?php
-require_once dirname(__DIR__) . '/config.php';
 
 // Database connection details from .env
 $host = $_ENV['DB_HOST'];

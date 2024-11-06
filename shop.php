@@ -1,25 +1,13 @@
 <?php
-require_once __DIR__ . '/config.php';
+require_once SERVER_ROOT . '/config.php';
 
-$data = require(__DIR__ . "/db_connections/get_all_products.php");
+$data = require(SERVER_ROOT . "/db_connections/get_all_products.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Our Shop</title>
-    <link rel="icon" href="<?= ROOT ?>/assets/images/logo-tp-orange.ico">
-    <link href="<?= ROOT ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="<?= asset('css/fontawesome.css') ?>" />
-    <link rel="stylesheet" href="<?= asset('css/templatemo-lugx-gaming.css') ?>" />
-    <link rel="stylesheet" href="<?= asset('css/owl.css') ?>" />
-    <link rel="stylesheet" href="<?= asset('css/animate.css') ?>" />
-</head>
+<?php include "./components/head.php" ?>
 
 <body>
 
@@ -88,31 +76,27 @@ $data = require(__DIR__ . "/db_connections/get_all_products.php");
 
     <?php include('./components/footer.php'); ?>
 
-</body>
+    <?php include('./components/scripts.php'); ?>
+    <script>
+        $(document).ready(function() {
+            // Filter function
+            $('.trending-filter a').click(function() {
+                var filterValue = $(this).attr('data-filter');
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="<?= ROOT ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?= ROOT ?>/assets/js/isotope.min.js"></script>
-<script src="<?= ROOT ?>/assets/js/custom.js"></script>
-<script>
-    $(document).ready(function() {
-        // Filter function
-        $('.trending-filter a').click(function() {
-            var filterValue = $(this).attr('data-filter');
+                // Remove 'is_active' class from all links and add to the clicked one
+                $('.trending-filter a').removeClass('is_active');
+                $(this).addClass('is_active');
 
-            // Remove 'is_active' class from all links and add to the clicked one
-            $('.trending-filter a').removeClass('is_active');
-            $(this).addClass('is_active');
-
-            // Show all items if the filter is '*', else filter by class
-            if (filterValue === '*') {
-                $('.trending-items').show();
-            } else {
-                $('.trending-items').hide();
-                $(filterValue).show();
-            }
+                // Show all items if the filter is '*', else filter by class
+                if (filterValue === '*') {
+                    $('.trending-items').show();
+                } else {
+                    $('.trending-items').hide();
+                    $(filterValue).show();
+                }
+            });
         });
-    });
-</script>
+    </script>
+</body>
 
 </html>

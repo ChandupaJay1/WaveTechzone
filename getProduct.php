@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require_once __DIR__ . '/config.php';
 
 // Database connection details from .env
 $host = $_ENV['DB_HOST'];

@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
-
 <footer>
     <div class="container">
         <div class="footer-links">
@@ -26,3 +24,4 @@
 
 
 </footer>
+
