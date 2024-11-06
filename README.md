@@ -1,4 +1,4 @@
-# Wave Techzone - Computer Shop Website
+# Wave Techzone - Computer Shop
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ChandupaJay1/WaveTechzone)
 ![GitHub stars](https://img.shields.io/github/stars/ChandupaJay1/WaveTechzone?style=social)
