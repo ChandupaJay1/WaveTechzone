@@ -1,2 +1,6 @@
 header
 <li><a href="games" <?= (isset($path) && $path === '/games') ? 'class="active"' : '' ?>>Games</a></li>
+
+product-Details
+
+<a href="<?= ROOT ?>/cart?action=add&id=<?= htmlspecialchars($product['id']); ?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to Cart</a>

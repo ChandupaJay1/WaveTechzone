@@ -49,7 +49,9 @@ try {
     <link rel="stylesheet" href="<?= asset('css/templatemo-lugx-gaming.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/owl.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/animate.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -95,7 +97,11 @@ try {
                         <span class="product-category">Category: <?= htmlspecialchars($product['category_name']); ?></span>
                         <h3 class="product-price">$<?= htmlspecialchars($product['price']); ?></h3>
                         <p class="product-description"><?= nl2br(htmlspecialchars($product['description'])); ?></p>
-                        <a href="<?= ROOT ?>/cart?action=add&id=<?= htmlspecialchars($product['id']); ?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+                        <a href="https://wa.me/+94712095954" target="_blank">
+                            <button class="wp-button">
+                                <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Contact Us on WhatsApp
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
