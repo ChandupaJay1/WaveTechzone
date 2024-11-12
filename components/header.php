@@ -15,6 +15,7 @@
                         <li><a href="<?= ROOT ?>" <?= !isset($path) || ($path === '/') ? 'class="active"' : '' ?>>Home</a></li>
                         <li><a href="<?= ROOT ?>/shop" <?= (isset($path) && $path === '/shop') ? 'class="active"' : '' ?>>Shop</a></li>
                         <!-- <li><a href="<?= ROOT ?>/product-details">Product Details</a></li> -->
+                        <li><a href="games" <?= (isset($path) && $path === '/games') ? 'class="active"' : '' ?>>Games</a></li>
                         <li><a href="<?= ROOT ?>/contact" <?= (isset($path) && $path === '/contact') ? 'class="active"' : '' ?>>Contact Us</a></li>
                         <li><a href="<?= ROOT ?>/admin" <?= (isset($path) && $path === '/admin') ? 'class="active"' : '' ?>>Admin</a></li>
                         <!-- <li><a href="#">Sign In</a></li> -->
