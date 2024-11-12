@@ -101,12 +101,12 @@ include('adminHeader.php');
                     <tbody>
                         <?php while ($row = $products->fetch_assoc()): ?>
                             <tr>
-                                <td><?= htmlspecialchars($row['id']); ?></td>
+                                <td style="text-align: center;"><?= htmlspecialchars($row['id']); ?></td>
                                 <td><?= htmlspecialchars($row['name']); ?></td>
                                 <td><?= htmlspecialchars($row['description']); ?></td>
-                                <td><img src="<?= ROOT ?>/assets/images/products/<?= htmlspecialchars($row['image']); ?>" alt="Product Image" height="50"></td>
-                                <td><?= htmlspecialchars($row['price']); ?></td>
-                                <td><?= $row['featured'] ? 'Yes' : 'No'; ?></td>
+                                <td style="text-align: center;"><img src="<?= ROOT ?>/assets/images/products/<?= htmlspecialchars($row['image']); ?>" alt="Product Image" height="50"></td>
+                                <td style="text-align: center;"><?= htmlspecialchars($row['price']); ?></td>
+                                <td style="text-align: center;"><?= $row['featured'] ? 'Yes' : 'No'; ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
