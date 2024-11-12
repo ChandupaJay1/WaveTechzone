@@ -1,26 +1,28 @@
 <?php
+// Start session with secure parameters
+session_set_cookie_params([
+    'lifetime' => 0,
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Strict'
+]);
 session_start();
 
-// Use absolute path to include config.php
 require_once __DIR__ . '/../config.php';
 
-// Redirect if admin is already logged in
 if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
     header("Location: " . ROOT . "/adminDashboard");
     exit;
 }
 
-// Check if login form has been submitted
 if (isset($_POST['login_btn'])) {
-    $email = $_POST['email'];
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
 
-    // Check if required environment variables are set
     if (!isset($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_DATABASE'])) {
         die("Database connection variables are not set.");
     }
 
-    // Establish a database connection using environment variables
     $conn = new mysqli(
         $_ENV['DB_HOST'],
         $_ENV['DB_USERNAME'],
@@ -28,12 +30,11 @@ if (isset($_POST['login_btn'])) {
         $_ENV['DB_DATABASE']
     );
 
-    // Check for connection errors
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        error_log("Connection failed: " . $conn->connect_error);
+        die("Connection error. Please try again later.");
     }
 
-    // Use prepared statement to prevent SQL injection
     $stmt = $conn->prepare("SELECT `id`, `fname`, `lname`, `email`, `password` FROM `admin` WHERE `email` = ? LIMIT 1");
 
     if ($stmt) {
@@ -41,12 +42,10 @@ if (isset($_POST['login_btn'])) {
         $stmt->execute();
         $stmt->store_result();
 
-        // Check if a user was found with the given email
         if ($stmt->num_rows == 1) {
             $stmt->bind_result($admin_id, $admin_fname, $admin_lname, $admin_email, $admin_password);
             $stmt->fetch();
 
-            // Verify password
             if (password_verify($password, $admin_password)) {
                 // Store user data in session variables
                 $_SESSION['id'] = $admin_id;
@@ -55,8 +54,11 @@ if (isset($_POST['login_btn'])) {
                 $_SESSION['email'] = $admin_email;
                 $_SESSION['admin_logged_in'] = true;
 
-                header("Location: " . ROOT . "/adminDashboard?login_success=Logged in successfully!");
+                // Unset sensitive variables immediately after login
+                unset($email);
+                unset($password);
 
+                header("Location: " . ROOT . "/adminDashboard?login_success=Logged in successfully!");
                 exit;
             } else {
                 header("Location: " . ROOT . "/admin?error=Incorrect password");
@@ -69,12 +71,14 @@ if (isset($_POST['login_btn'])) {
 
         $stmt->close();
     } else {
-        die("Failed to prepare statement: " . $conn->error);
+        error_log("Failed to prepare statement: " . $conn->error);
+        die("An error occurred. Please try again later.");
     }
 
     $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
