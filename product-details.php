@@ -96,7 +96,7 @@ try {
                         <h2 class="product-title"><?= htmlspecialchars($product['name']); ?></h2>
                         <span class="product-category">Category: <?= htmlspecialchars($product['category_name']); ?></span>
                         <h3 class="product-price">$<?= htmlspecialchars($product['price']); ?></h3>
-                        <p class="product-description"><?= nl2br(htmlspecialchars($product['description'])); ?></p>
+                        <p class="product-description lh-base fw-normal fs-5"><?= nl2br(htmlspecialchars($product['description'])); ?></p>
                         <a href="https://wa.me/+94712095954" target="_blank">
                             <button class="wp-button">
                                 <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Contact Us on WhatsApp

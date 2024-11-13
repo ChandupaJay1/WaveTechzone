@@ -111,7 +111,7 @@ $featured = require(__DIR__ . "/db_connections/get_featured_products.php");
                             <div class="image">
                                 <img src="<?= ROOT ?>/assets/images/services3.png" alt="" style="max-width: 44px;">
                             </div>
-                            <h4>Photocopy,Duplo & Scanner Repairing</h4>
+                            <h4>Photocopy/ Duplo/ Scanner Repairing</h4>
                         </div>
                     </a>
                 </div>
@@ -121,7 +121,7 @@ $featured = require(__DIR__ . "/db_connections/get_featured_products.php");
                             <div class="image">
                                 <img src="<?= ROOT ?>/assets/images/services4.png" alt="" style="max-width: 44px;">
                             </div>
-                            <h4>Network/CCTV/Security Systems</h4>
+                            <h4>Network / CCTV / Security Systems</h4>
                         </div>
                     </a>
                 </div>
@@ -149,7 +149,7 @@ $featured = require(__DIR__ . "/db_connections/get_featured_products.php");
                         <div class="item">
                             <div class="thumb">
                                 <a href="<?= ROOT ?>/product-details?id=<?= $row['id'] ?>"><img src="<?= ROOT ?>/assets/images/products/<?= $row['image'] ?>" alt=""></a>
-                                <span class="price"><?= $row['price'] ?></span>
+                                <span class="price">RS.<?= $row['price'] ?></span>
                             </div>
                             <div class="down-content">
                                 <span class="category"><?= $row['category'] ?></span>
@@ -362,8 +362,19 @@ $featured = require(__DIR__ . "/db_connections/get_featured_products.php");
                                     <h6>Service Hours</h6>
                                     <h2>We Are <em>24h</em> Available For You!</h2>
                                 </div>
-                                <p>🔴24hrs Technical Support. <br>🔴Island wide door step service for&emsp;<br>local Government and private sectors.
-                                </p>
+                                <div>
+                                    <ul class="list-unstyled text-secondary mt-3 mb-0">
+                                        <li class="d-flex align-items-center mb-2">
+                                            <span class="text-danger me-2">🔴</span>
+                                            <span>24hrs Technical Support.</span>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            <span class="text-danger me-2">🔴</span>
+                                            <span>Island-wide door step service for local Government & private sectors.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
                                 <div class="main-button">
                                     <!-- <a href="shop.html">Shop Now</a> -->
                                 </div>

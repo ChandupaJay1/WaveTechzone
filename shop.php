@@ -57,7 +57,7 @@ $data = require(__DIR__ . "/db_connections/get_all_products.php");
                                     <a href="<?= ROOT ?>/product-details?id=<?= $row['product_id']; ?>">
                                         <img src='<?= asset("images/products/" . htmlspecialchars($row["image"])) ?>' alt="Product Image">
                                     </a>
-                                    <span class="price"><em>$<?= htmlspecialchars($row['price']); ?></em></span>
+                                    <span class="price">RS.<?= htmlspecialchars($row['price']); ?></span>
                                 </div>
                                 <div class="down-content">
                                     <span class="category"><?= htmlspecialchars($row['category_name']); ?></span>

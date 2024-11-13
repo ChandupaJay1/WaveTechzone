@@ -2127,3 +2127,23 @@ footer {
   display: block; /* Ensure items are displayed */
 }
 
+
+.card {
+    border: none;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.card p {
+    font-size: 1.1rem;
+}
+
+.card ul li i {
+    font-size: 1.2rem; /* Adjust icon size */
+}
+.card ul li span {
+    font-size: 1.1rem; /* Adjust text size */
+}
