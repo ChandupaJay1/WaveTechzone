@@ -118,10 +118,6 @@ if (isset($_POST['login_btn'])) {
                 <div class="form-group">
                     <a href="<?= ROOT ?>" class="btn btn-secondary">Back To Home</a>
                 </div>
-
-                <div class="form-group">
-                <a href="<?= ROOT ?>/adminRegister" <?= (isset($path) && $path === '/adminRegister') ? 'class="active"' : '' ?>>Register</a>
-                </div>
             </form>
         </div>
 
