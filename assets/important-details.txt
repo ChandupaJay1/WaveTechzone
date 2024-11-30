@@ -1,2 +1,6 @@
 header
 <li><a href="games" <?= (isset($path) && $path === '/games') ? 'class="active"' : '' ?>>Games</a></li>
+
+                <div class="form-group">
+                <a href="<?= ROOT ?>/adminRegister" <?= (isset($path) && $path === '/adminRegister') ? 'class="active"' : '' ?>>Register</a>
+                </div>

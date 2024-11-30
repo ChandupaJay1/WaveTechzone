@@ -2,6 +2,12 @@
 require_once SERVER_ROOT . '/config.php';
 
 $data = require(SERVER_ROOT . "/db_connections/get_all_products.php");
+
+$products = $data['products'] ?? [];
+$total = $data['total'] ?? 0;
+$limit = $data['limit'] ?? 10;
+$page = $data['page'] ?? 1;
+$totalPages = ceil($total / $limit);
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +16,6 @@ $data = require(SERVER_ROOT . "/db_connections/get_all_products.php");
 <?php include "./components/head.php" ?>
 
 <body>
-
     <?php include('./components/header.php'); ?>
 
     <div class="page-heading header-text">
@@ -37,37 +42,44 @@ $data = require(SERVER_ROOT . "/db_connections/get_all_products.php");
             </ul>
 
             <div class="row trending-box">
-                <?php if (!empty($data)): ?>
-                    <?php foreach ($data as $row): ?>
-                        <div class="col-lg-3 col-md-6 mb-30 trending-items <?= htmlspecialchars($row['category_name']); ?>">
+                <?php if (!empty($products) && is_array($products)): ?>
+                    <?php foreach ($products as $row): ?>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 trending-items <?= htmlspecialchars($row['category_name'] ?? 'uncategorized'); ?>">
                             <div class="item">
                                 <div class="thumb">
-                                    <a href="<?= ROOT ?>/product-details?id=<?= $row['product_id']; ?>">
-                                        <img src='<?= asset("images/products/" . htmlspecialchars($row["image"])) ?>' alt="Product Image">
+                                    <a href="<?= ROOT ?>/product-details?id=<?= htmlspecialchars($row['product_id'] ?? 0); ?>">
+                                        <img src='<?= asset("images/products/" . htmlspecialchars($row["image"] ?? "default.jpg")) ?>' alt="Product Image">
                                     </a>
-                                    <span class="price"><em>$<?= htmlspecialchars($row['price']); ?></em></span>
+                                    <span class="price">Rs.<?= htmlspecialchars($row['price'] ?? '0.00'); ?></span>
                                 </div>
                                 <div class="down-content">
-                                    <span class="category"><?= htmlspecialchars($row['category_name']); ?></span>
-                                    <h4><?= htmlspecialchars($row['product_name']); ?></h4>
-                                    <a href="<?= ROOT ?>/product-details?id=<?= $row['product_id']; ?>"><i class="fa fa-shopping-bag"></i></a>
+                                    <span class="category"><?= htmlspecialchars($row['category_name'] ?? 'Uncategorized'); ?></span>
+                                    <h4><?= htmlspecialchars($row['product_name'] ?? 'Unknown Product'); ?></h4>
+                                    <a href="<?= ROOT ?>/product-details?id=<?= htmlspecialchars($row['product_id'] ?? 0); ?>"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p>SORRY!.. No products found.</p>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+                        <p class="text-center text-muted fs-4">SORRY!.. No products found.</p>
+                    </div>
                 <?php endif; ?>
             </div>
+
 
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="pagination">
-                        <li><a href="#"> &lt; </a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a class="is_active" href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#"> &gt; </a></li>
+                        <?php if ($page > 1): ?>
+                            <li><a href="?page=<?= $page - 1; ?>&limit=<?= $limit; ?>"> &lt; </a></li>
+                        <?php endif; ?>
+                        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                            <li><a class="<?= $i == $page ? 'is_active' : ''; ?>" href="?page=<?= $i; ?>&limit=<?= $limit; ?>"><?= $i; ?></a></li>
+                        <?php endfor; ?>
+                        <?php if ($page < $totalPages): ?>
+                            <li><a href="?page=<?= $page + 1; ?>&limit=<?= $limit; ?>"> &gt; </a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
@@ -75,28 +87,7 @@ $data = require(SERVER_ROOT . "/db_connections/get_all_products.php");
     </div>
 
     <?php include('./components/footer.php'); ?>
-
     <?php include('./components/scripts.php'); ?>
-    <script>
-        $(document).ready(function() {
-            // Filter function
-            $('.trending-filter a').click(function() {
-                var filterValue = $(this).attr('data-filter');
-
-                // Remove 'is_active' class from all links and add to the clicked one
-                $('.trending-filter a').removeClass('is_active');
-                $(this).addClass('is_active');
-
-                // Show all items if the filter is '*', else filter by class
-                if (filterValue === '*') {
-                    $('.trending-items').show();
-                } else {
-                    $('.trending-items').hide();
-                    $(filterValue).show();
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

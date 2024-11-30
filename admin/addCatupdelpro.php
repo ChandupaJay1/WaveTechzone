@@ -41,6 +41,29 @@ if (isset($_POST['add_category'])) {
     echo "<p class='alert alert-success'>Category added successfully.</p>";
 }
 
+// Handle Delete Category
+if (isset($_POST['delete_category'])) {
+    $category_id = $_POST['category_id'];
+    // Check if the category is associated with any products
+    $product_check_stmt = $conn->prepare("SELECT COUNT(*) AS product_count FROM `product` WHERE category_id = ?");
+    $product_check_stmt->bind_param('i', $category_id);
+    $product_check_stmt->execute();
+    $result = $product_check_stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    if ($row['product_count'] > 0) {
+        echo "<p class='alert alert-danger'>Category cannot be deleted because it is associated with products.</p>";
+    } else {
+        $delete_stmt = $conn->prepare("DELETE FROM `category` WHERE id = ?");
+        $delete_stmt->bind_param('i', $category_id);
+        if ($delete_stmt->execute()) {
+            echo "<p class='alert alert-success'>Category deleted successfully.</p>";
+        } else {
+            echo "<p class='alert alert-danger'>Error deleting category: " . $conn->error . "</p>";
+        }
+    }
+}
+
 // Handle Update Product
 if (isset($_POST['update_product'])) {
     $product_id = $_POST['product_id'];
@@ -125,21 +148,42 @@ if (isset($_POST['delete_product'])) {
             <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4">
                 <form method="POST" class="my-4">
                     <h1 class="h2 my-4">Handle Products</h1>
-                        <div class="mb-3">
-                            <label for="category_name" class="form-label">Category Name</label>
-                            <input type="text" class="form-control" id="category_name" name="category_name" required>
-                        </div>
-                        <button type="submit" name="add_category" class="btn btn-success">Add Category</button>
+                    <div class="mb-3">
+                        <label for="category_name" class="form-label">Category Name</label>
+                        <input type="text" class="form-control" id="category_name" name="category_name" required>
+                    </div>
+                    <button type="submit" name="add_category" class="btn btn-success">Add Category</button>
+                </form>
+
+                <!-- Delete Category Form -->
+                <form method="POST" class="my-4">
+                    <h4>Delete Category</h4>
+                    <div class="mb-3">
+                        <label for="category_id_delete" class="form-label">Select Category</label>
+                        <select class="form-select" id="category_id_delete" name="category_id" required>
+                            <option value="" disabled selected>Select a category to delete</option>
+                            <?php
+                            $category_stmt->execute();
+                            $categories = $category_stmt->get_result();
+                            while ($category = $categories->fetch_assoc()): ?>
+                                <option value="<?= htmlspecialchars($category['id']); ?>"><?= htmlspecialchars($category['name']); ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <button type="submit" name="delete_category" class="btn btn-danger">Delete Category</button>
                 </form>
 
                 <!-- Update Product Form -->
-                <form method="POST" enctype="multipart/form-data" class="my-4">
+                <form method="POST" enctype="multipart/form-data" class="my-4" id="update-product-form">
                     <h4>Update Product</h4>
                     <div class="mb-3">
                         <label for="product_id" class="form-label">Select Product</label>
                         <select class="form-select" id="product_id" name="product_id" required>
                             <option value="" disabled selected>Select a product to update</option>
-                            <?php while ($product = $products->fetch_assoc()): ?>
+                            <?php
+                            $product_stmt->execute();
+                            $products = $product_stmt->get_result();
+                            while ($product = $products->fetch_assoc()): ?>
                                 <option value="<?= htmlspecialchars($product['id']); ?>"><?= htmlspecialchars($product['name']); ?></option>
                             <?php endwhile; ?>
                         </select>
@@ -164,6 +208,7 @@ if (isset($_POST['delete_product'])) {
                     <div class="mb-3">
                         <label for="image" class="form-label">Image</label>
                         <input type="file" class="form-control" id="image" name="image">
+                        <img id="product-image-preview" src="" alt="Product Image" class="mt-2" style="max-width: 150px; display: none;">
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
@@ -178,6 +223,7 @@ if (isset($_POST['delete_product'])) {
                     </div>
                     <button type="submit" name="update_product" class="btn btn-primary">Update Product</button>
                 </form>
+
 
                 <!-- Delete Product Form -->
                 <form method="POST" class="my-4">

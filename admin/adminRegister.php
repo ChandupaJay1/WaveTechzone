@@ -9,7 +9,35 @@ if (isset($_POST['register_btn'])) {
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password
+    $password = $_POST['password'];
+
+    // Password validation rules
+    $passwordErrors = [];
+    if (strlen($password) < 8) {
+        $passwordErrors[] = "Password must be at least 8 characters long.";
+    }
+    if (!preg_match('/[A-Z]/', $password)) {
+        $passwordErrors[] = "Password must contain at least one uppercase letter.";
+    }
+    if (!preg_match('/[a-z]/', $password)) {
+        $passwordErrors[] = "Password must contain at least one lowercase letter.";
+    }
+    if (!preg_match('/[0-9]/', $password)) {
+        $passwordErrors[] = "Password must contain at least one number.";
+    }
+    if (!preg_match('/[\W]/', $password)) {
+        $passwordErrors[] = "Password must contain at least one special character (e.g., !@#$%^&*).";
+    }
+
+    // Check if there are any password validation errors
+    if (!empty($passwordErrors)) {
+        $errorString = urlencode(implode(" ", $passwordErrors));
+        header("Location: " . ROOT . "/adminregister?error=" . $errorString);
+        exit;
+    }
+
+    // Hash the password after validation
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
     // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -34,7 +62,7 @@ if (isset($_POST['register_btn'])) {
     // Prepare and execute the insertion query
     $stmt = $conn->prepare("INSERT INTO `admin` (`fname`, `lname`, `email`, `mobile`, `password`) VALUES (?, ?, ?, ?, ?)");
     if ($stmt) {
-        $stmt->bind_param('sssss', $fname, $lname, $email, $mobile, $password);
+        $stmt->bind_param('sssss', $fname, $lname, $email, $mobile, $passwordHash);
         if ($stmt->execute()) {
             header("Location: " . ROOT . "/admin?register_success=Registration successful! You can now log in.");
             exit;
@@ -51,6 +79,7 @@ if (isset($_POST['register_btn'])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,15 +88,18 @@ if (isset($_POST['register_btn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/admin.css">
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/style.css">
+    <link rel="icon" href="<?= ROOT ?>/assets/images/nerdtech.png" />
 </head>
 
 <body style="background-color: #F9EBEA">
 
     <section class="my-5 py-5">
+
         <div class="container text-center mt-3 pt-5">
             <img src="<?= ROOT ?>/assets/images/nerdtech.png" alt="NerdTech Logo" class="mb-3" style="height: 60px;">
-            <h2 class="font-weight-bold">Nerd Admin Panel Registration</h2>
+            <h2 class="font-weight-bold">Welcome To Nerd Admin Panel</h2>
         </div>
 
         <div class="mx-auto container">
@@ -110,12 +142,12 @@ if (isset($_POST['register_btn'])) {
         </div>
     </section>
 
-    <p class="m-lg-3 d-flex justify-content-center align-items-center position-fixed bottom-0 w-100 text-dark p-3">
+    <footer class="m-lg-3 d-flex justify-content-center align-items-center position-fixed bottom-0 w-100 text-dark p-3">
         <a rel="nofollow" href="https://www.facebook.com/nerdtechinfo" target="_blank" class="text-decoration-none text-dark bg-gradient">
             Nerd Admin Panel Powered By NerdTech Software Company.
             <img src="<?= ROOT ?>/assets/images/nerdtech.png" alt="NerdTech Logo" class="ft-logo">
         </a>
-    </p>
+    </footer>
 
     <script src="<?= ROOT ?>/assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/451b2ce250.js" crossorigin="anonymous"></script>
