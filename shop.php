@@ -44,7 +44,7 @@ $totalPages = ceil($total / $limit);
             <div class="row trending-box">
                 <?php if (!empty($products) && is_array($products)): ?>
                     <?php foreach ($products as $row): ?>
-                        <div class="col-lg-3 col-md-6 mb-30 trending-items <?= htmlspecialchars($row['category_name'] ?? 'uncategorized'); ?>">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 trending-items <?= htmlspecialchars($row['category_name'] ?? 'uncategorized'); ?>">
                             <div class="item">
                                 <div class="thumb">
                                     <a href="<?= ROOT ?>/product-details?id=<?= htmlspecialchars($row['product_id'] ?? 0); ?>">
@@ -66,6 +66,7 @@ $totalPages = ceil($total / $limit);
                     </div>
                 <?php endif; ?>
             </div>
+
 
             <div class="row">
                 <div class="col-lg-12">
